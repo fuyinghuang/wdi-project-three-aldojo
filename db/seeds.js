@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const environment = require('../config/environment');
 const Country = require('../models/country');
-const Food = require('../models/book');
+const Food = require('../models/food');
 const User = require('../models/user');
 mongoose.connect(environment.dbUri);
 
