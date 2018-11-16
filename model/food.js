@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Basic food schema
 const foodSchema = mongoose.Schema({
   name: String,
   description: String,
