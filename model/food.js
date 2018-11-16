@@ -11,8 +11,7 @@ const foodSchema = mongoose.Schema({
   comments: [{
     text: String,
     user: { type: mongoose.Schema.ObjectId, ref: User },
-    createdBy: { type: mongoose.Schema.ObjectId, ref: User },
-    votes: [User]
+    createdBy: { type: mongoose.Schema.ObjectId, ref: User }
   }]
 });
 
