@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const User = require('./user');
+const Country = require('./country');
 
 // Basic food schema
 const foodSchema = mongoose.Schema({
