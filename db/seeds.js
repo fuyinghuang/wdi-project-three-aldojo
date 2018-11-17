@@ -65,7 +65,7 @@ Country.create(countryData)
           .then(result => {
             console.log(`Created ${result.length} users`);
           });
-        console.log(`Created ${result.length} books!`);
+        console.log(`Created ${result.length} foods!`);
       });
     console.log(`Created ${result.length} countries!`);
     mongoose.connection.close();
