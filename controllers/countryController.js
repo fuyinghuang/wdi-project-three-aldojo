@@ -5,10 +5,17 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
+function showRoute(req, res, next) {
+  console.log('req.params.id',req.params.countryId);
+  Country.findById(req.params.countryId)
+    .then(country => res.json(country))
+    .catch(next);
+}
 
 
 
 module.exports = {
-  indexRoute: indexRoute
+  indexRoute: indexRoute,
+  showRoute: showRoute
 
 };
