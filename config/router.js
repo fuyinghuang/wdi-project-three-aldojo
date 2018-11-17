@@ -1,13 +1,17 @@
 const router = require('express').Router();
-const CountryController = require('../controllers/CountryController');
+const countryController = require('../controllers/countryController');
+const foodController = require('../controllers/foodController');
 
 
 router.route('/countries')
-  .get(CountryController.indexRoute);
-//   .post(secureRoute, CountryController.create);
+  .get(countryController.indexRoute);
+
 
 router.route('/countries/:countryId')
-  .get(CountryController.showRoute);
+  .get(countryController.countryShowRoute);
+
+router.route('/countries/:countryId/:foodId')
+  .get(foodController.foodShowRoute);
 
 
 module.exports = router;

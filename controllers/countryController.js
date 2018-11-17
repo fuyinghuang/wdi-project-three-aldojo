@@ -5,7 +5,7 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
-function showRoute(req, res, next) {
+function countryShowRoute(req, res, next) {
   console.log('req.params.id',req.params.countryId);
   Country.findById(req.params.countryId)
     .then(country => res.json(country))
@@ -16,6 +16,6 @@ function showRoute(req, res, next) {
 
 module.exports = {
   indexRoute: indexRoute,
-  showRoute: showRoute
+  countryShowRoute: countryShowRoute
 
 };
