@@ -49,6 +49,6 @@ router.route('/foods/:foodId/comments')
   .post(secureRoute, commentController.createRoute);
 
 router.route('/foods/:foodId/comments/:commentId')
-  .delete(commentController.deleteRoute);
+  .delete(secureRoute, commentController.deleteRoute);
 
 module.exports = router;
