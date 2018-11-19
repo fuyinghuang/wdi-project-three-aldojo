@@ -7,7 +7,6 @@ const Food = require('../models/food');
 
 mongoose.connect(environment.dbUri);
 
-
 const countryIds = [
   '5be9860fcb16d525543ceda6'
 ];
