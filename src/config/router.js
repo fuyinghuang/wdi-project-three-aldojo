@@ -74,7 +74,7 @@ function Router($stateProvider) {
       }
     })
     .state('foodNew', {
-      url: '/foods/new',
+      url: '/foods/:id/new',
       templateUrl: './views/foods/new.html',
       controller: foodNewCtrl
     });
