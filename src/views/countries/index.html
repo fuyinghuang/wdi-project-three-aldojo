@@ -7,9 +7,9 @@
   <hr>
     <!-- Don't show every fish, just the filtered ones! -->
     <div ng-repeat="country in filteredCountries">
-      <a ui-sref="countriesShow({ id: country._id })">
+      <a ui-sref="countryShow({ id: country._id })">
             {{ country.name }}
-          <img src="{{ country.flagUrl }}">
+          <img ng-src="{{ country.flagUrl }}">
       </a>
     </div>
 </section>

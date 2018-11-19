@@ -1,6 +1,7 @@
 import countriesIndexCtrl from '../controllers/countries/indexCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 import loginCtrl from '../controllers/loginCtrl';
+import foodNewCtrl from '../controllers/foods/foodNewCtrl';
 
 function Router($stateProvider) {
   $stateProvider
@@ -36,7 +37,13 @@ function Router($stateProvider) {
           }).then(() => $state.go('countryIndex'));
         };
       }
+    })
+    .state('foodNew', {
+      url: '/foods/new',
+      templateUrl: './views/foods/new.html',
+      controller: foodNewCtrl
     });
+
 
 }
 
