@@ -2,6 +2,7 @@ const router = require('express').Router();
 const countryController = require('../controllers/countryController');
 const foodController = require('../controllers/foodController');
 const authController = require('../controllers/authController');
+const commentController = require('../controllers/commentController');
 const jwt = require('jsonwebtoken');
 
 function secureRoute(req, res, next) {
@@ -43,5 +44,11 @@ router.route('/foods/:id')
   .get(foodController.foodShowRoute)
   .put(secureRoute, foodController.foodUpdateRoute)
   .delete(secureRoute, foodController.foodDeleteRoute);
+
+router.route('/foods/:foodId/comments')
+  .post(secureRoute, commentController.createRoute);
+
+router.route('/foods/:foodId/comments/:commentId')
+  .delete(commentController.deleteRoute);
 
 module.exports = router;

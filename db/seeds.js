@@ -7,33 +7,11 @@ const Food = require('../models/food');
 
 mongoose.connect(environment.dbUri);
 
-
-
-
-// This removes all previous data in the collection under the name Book.
-
-// const userIds = [
-//   '5be9860fcb16d525543ceda1',
-//   '5be9860fcb16d525543ceda2',
-//   '5be9860fcb16d525543ceda3'
-// ];
 const countryIds = [
   '5be9860fcb16d525543ceda6'
 ];
 
-// const userData = [
-//   {
-//     _id: userIds[1],
-//     username: 'Alex',
-//     email: 'alex@superdude.org.uk',
-//     password: 'pass'
-//   }, {
-//     _id: userIds[0],
-//     username: 'Grant',
-//     email: 'grant_is_great@btinternet.com',
-//     password: 'pass'
-//   }
-// ];
+
 
 
 const countryData = [
@@ -45,6 +23,13 @@ const countryData = [
     Alpha3Code: 'TWN'
   }
 ];
+
+
+Country.create(countryData)
+  .then(countries => {
+    console.log(`Created ${countries.length} fishes`);
+    mongoose.connection.close();
+  });
 
 
 const foodData = [

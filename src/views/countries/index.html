@@ -5,16 +5,11 @@
   <button class="button">🔎</button>
   </form>
   <hr>
-  <div class="columns is-multiline">
     <!-- Don't show every fish, just the filtered ones! -->
-    <div ng-repeat="country in filteredCountries" class="column is-4">
+    <div ng-repeat="country in filteredCountries">
       <a ui-sref="countriesShow({ id: country._id })">
-        <div class="card">
-          <div class="card-header">
             {{ country.name }}
-          </div>
-        </div>
+          <img src="{{ country.flagUrl }}">
       </a>
     </div>
-  </div>
 </section>
