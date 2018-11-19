@@ -9,6 +9,10 @@ function countryIndexRoute(req, res, next) {
     .catch(next);
 }
 
+
+
+
+
 function countryShowRoute(req, res, next) {
   console.log('req.params.id',req.params.id);
   Country
@@ -23,5 +27,4 @@ function countryShowRoute(req, res, next) {
 module.exports = {
   countryIndexRoute: countryIndexRoute,
   countryShowRoute: countryShowRoute
-
 };

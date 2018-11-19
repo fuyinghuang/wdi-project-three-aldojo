@@ -21,5 +21,6 @@ countrySchema.set('toJSON', {
 
 
 
+
 const countryModel = mongoose.model('Country', countrySchema);
 module.exports = countryModel;
