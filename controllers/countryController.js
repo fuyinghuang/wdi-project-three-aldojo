@@ -1,13 +1,19 @@
 const Country = require('../models/country');
+// const Food = require('../models/food');
 
-function indexRoute(req, res, next) {
-  Country.find().then(countries => res.json(countries))
+function countryIndexRoute(req, res, next) {
+  Country
+    .find()
+    // .populate('nationalFood')
+    .then(countries => res.json(countries))
     .catch(next);
 }
 
 function countryShowRoute(req, res, next) {
-  console.log('req.params.id',req.params.countryId);
-  Country.findById(req.params.countryId)
+  console.log('req.params.id',req.params.id);
+  Country
+    .findById(req.params.id)
+    .populate('nationalFood')
     .then(country => res.json(country))
     .catch(next);
 }
@@ -15,7 +21,7 @@ function countryShowRoute(req, res, next) {
 
 
 module.exports = {
-  indexRoute: indexRoute,
+  countryIndexRoute: countryIndexRoute,
   countryShowRoute: countryShowRoute
 
 };

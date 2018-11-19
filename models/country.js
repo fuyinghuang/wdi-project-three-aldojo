@@ -7,6 +7,17 @@ const countrySchema = mongoose.Schema({
   Alpha3Code: String
 });
 
+countrySchema.virtual('nationalFood', {
+  ref: 'Food',
+  localField: '_id',
+  foreignField: 'country'
+});
+
+countrySchema.set('toJSON', {
+  virtuals: true
+});
+
+
 
 
 
