@@ -1,0 +1,29 @@
+<section class="section is-small">
+<div class="columns">
+  <div class="column is-4 is-offset-4">
+    <h1 class="title is-3 has-text-centered">🍱🍟 Login 🍕🍰</h1>
+<form ng-submit="handleLogin()">
+<div class="field">
+  <label for="username">Username:</label>
+  <div class="control">
+  <input class="input" name="username" ng-model="user.username">
+  </div>
+</div>
+<div class="field">
+  <label for="email">Email:</label>
+  <div class="control">
+  <input class="input" name="email" ng-model="user.email">
+  </div>
+</div>
+
+<div class="field">
+  <label for="password">password:</label>
+  <div class="control">
+    <input class="input" name="password" type="password" ng-model="user.password">
+  </div>
+</div>
+  <button class="button is-light">login</button>
+</form>
+</div>
+</div>
+</section>
