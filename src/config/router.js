@@ -39,7 +39,7 @@ function Router($stateProvider) {
           $http({
             method: 'POST',
             url: '/api/countries',
-            data: $scope.county
+            data: $scope.country
           }).then(() => $state.go('countryIndex'));
         };
       }
