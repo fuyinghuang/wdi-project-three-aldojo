@@ -1,0 +1,4 @@
+<h1 class="title is-1">{{ country.name }}</h1>
+<img src="{{ country.flagUrl }}">
+<button ui-sref="countryEdit({ id: country._id })">Edit</button>
+<button ng-click="handleDelete()">DELETE</button>
