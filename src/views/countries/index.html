@@ -1,11 +1,12 @@
-<h1>Country LIST! A.K.A. INDEX</h1>
+<a ui-sref="countryIndex">
+  <h1>Country LIST! A.K.A. INDEX</h1>
+</a>
 <section>
   <form ng-submit="handleFilterSubmit()">
   <input type="text" class="input" ng-model="searchTerm">
   <button class="button">🔎</button>
   </form>
   <hr>
-    <!-- Don't show every fish, just the filtered ones! -->
     <div ng-repeat="country in filteredCountries">
       <a ui-sref="countryShow({ id: country._id })">
             {{ country.name }}
