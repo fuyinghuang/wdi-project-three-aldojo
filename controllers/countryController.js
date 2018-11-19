@@ -28,10 +28,30 @@ function countryShowRoute(req, res, next) {
     .catch(next);
 }
 
+function countryUpdateRoute(req, res, next) {
+  console.log('updating country');
+  Country
+    .findById(req.params.id)
+    .then(country => country.set(req.body))
+    .then(country => country.save())
+    .then(country => res.json(country))
+    .catch(next);
+}
+
+function countryDeleteRoute(req, res, next) {
+  Country.findByIdAndDelete(req.params.id)
+    .then(() => {
+      console.log('The country has been deleted');
+      res.sendStatus(204);
+    })
+    .catch(next);
+}
 
 
 module.exports = {
   countryIndexRoute: countryIndexRoute,
   countryCreateRoute: countryCreateRoute,
-  countryShowRoute: countryShowRoute
+  countryShowRoute: countryShowRoute,
+  countryUpdateRoute: countryUpdateRoute,
+  countryDeleteRoute: countryDeleteRoute
 };
