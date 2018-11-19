@@ -1,4 +1,7 @@
 import countriesIndexCtrl from '../controllers/countries/indexCtrl';
+import countriesShowCtrl from '../controllers/countries/showCtrl';
+import countriesNewCtrl from '../controllers/countries/newCtrl';
+import countriesEditCtrl from '../controllers/countries/editCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 import loginCtrl from '../controllers/loginCtrl';
 import foodNewCtrl from '../controllers/foods/foodNewCtrl';
@@ -27,51 +30,17 @@ function Router($stateProvider) {
     .state('countryShow', {
       templateUrl: './views/countries/show.html',
       url: '/countries/:id',
-      controller: function($state, $scope, $http) {
-        $http({
-          method: 'GET',
-          url: `/api/countries/${$state.params.id}`
-        }).then(result => {
-          $scope.country = result.data;
-        });
-        $scope.handleDelete = function() {
-          $http({
-            method: 'DELETE',
-            url: `/api/countries/${$scope.country._id}`
-          }).then(() => $state.go('countryIndex'));
-        };
-      }
+      controller: countriesShowCtrl
     })
     .state('countryNew', {
       url: '/countries/new',
       templateUrl: './views/countries/new.html',
-      controller: function($scope, $http, $state) {
-        $scope.handleSubmit = function() {
-          console.log('Form was submitted!', $scope.testing);
-          $http({
-            method: 'POST',
-            url: '/api/countries',
-            data: $scope.country
-          }).then(() => $state.go('countryIndex'));
-        };
-      }
+      controller: countriesNewCtrl
     })
     .state('countryEdit', {
       templateUrl: './views/countries/edit.html',
       url: '/countries/:id/edit',
-      controller: function($scope, $state, $http) {
-        $http({
-          method: 'GET',
-          url: `/api/countries/${$state.params.id}`
-        }).then(result => $scope.country = result.data);
-        $scope.handleSubmit = function() {
-          $http({
-            method: 'PUT',
-            url: `/api/countries/${$state.params.id}`,
-            data: $scope.country
-          }).then(() => $state.go('countryIndex'));
-        };
-      }
+      controller: countriesEditCtrl
     })
     .state('foodNew', {
       url: '/foods/:id/new',
