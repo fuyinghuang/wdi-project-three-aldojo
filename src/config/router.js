@@ -1,11 +1,22 @@
 import countriesIndexCtrl from '../controllers/countries/indexCtrl';
-
+import registerCtrl from '../controllers/registerCtrl';
+import loginCtrl from '../controllers/loginCtrl';
 
 function Router($stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
       url: '/'
+    })
+    .state('login', {
+      templateUrl: './views/login.html',
+      url: '/login',
+      controller: loginCtrl
+    })
+    .state('register', {
+      templateUrl: './views/register.html',
+      url: '/register',
+      controller: registerCtrl
     })
     .state('countryIndex', {
       templateUrl: './views/countries/index.html',
@@ -26,6 +37,7 @@ function Router($stateProvider) {
         };
       }
     });
+
 }
 
 
