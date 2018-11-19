@@ -1,0 +1,20 @@
+<h1>Country LIST! A.K.A. INDEX</h1>
+<section>
+  <form ng-submit="handleFilterSubmit()">
+  <input type="text" class="input" ng-model="searchTerm">
+  <button class="button">🔎</button>
+  </form>
+  <hr>
+  <div class="columns is-multiline">
+    <!-- Don't show every fish, just the filtered ones! -->
+    <div ng-repeat="country in filteredCountries" class="column is-4">
+      <a ui-sref="countriesShow({ id: country._id })">
+        <div class="card">
+          <div class="card-header">
+            {{ fish.name }}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
