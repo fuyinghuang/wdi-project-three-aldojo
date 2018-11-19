@@ -5,6 +5,9 @@ import countriesEditCtrl from '../controllers/countries/editCtrl';
 import registerCtrl from '../controllers/registerCtrl';
 import loginCtrl from '../controllers/loginCtrl';
 import foodNewCtrl from '../controllers/foods/foodNewCtrl';
+import foodEditCtrl from '../controllers/foods/foodEditCtrl';
+import foodsIndexCtrl from '../controllers/foods/foodIndexCtrl';
+import foodsShowCtrl from '../controllers/foods/foodShowCtrl';
 
 function Router($stateProvider) {
   $stateProvider
@@ -42,10 +45,25 @@ function Router($stateProvider) {
       url: '/countries/:id/edit',
       controller: countriesEditCtrl
     })
+    .state('foodIndex', {
+      templateUrl: './views/foods/index.html',
+      url: '/foods',
+      controller: foodsIndexCtrl
+    })
+    .state('foodShow', {
+      templateUrl: './views/foods/show.html',
+      url: '/foods/:id',
+      controller: foodsShowCtrl
+    })
     .state('foodNew', {
       url: '/foods/:id/new',
       templateUrl: './views/foods/new.html',
       controller: foodNewCtrl
+    })
+    .state('foodEdit', {
+      url: '/foods/:id/edit',
+      templateUrl: './views/foods/edit.html',
+      controller: foodEditCtrl
     });
 
 
