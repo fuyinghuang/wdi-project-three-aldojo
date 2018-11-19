@@ -9,9 +9,15 @@ function countryIndexRoute(req, res, next) {
     .catch(next);
 }
 
-
-
-
+function countryCreateRoute(req, res, next) {
+  Country
+    .create(req.body)
+    .then(country => {
+      console.log('creating a country', req.body);
+      res.status(201).json(country);
+    })
+    .catch(next);
+}
 
 function countryShowRoute(req, res, next) {
   console.log('req.params.id',req.params.id);
@@ -26,5 +32,6 @@ function countryShowRoute(req, res, next) {
 
 module.exports = {
   countryIndexRoute: countryIndexRoute,
+  countryCreateRoute: countryCreateRoute,
   countryShowRoute: countryShowRoute
 };

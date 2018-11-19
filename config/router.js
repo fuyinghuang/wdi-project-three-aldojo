@@ -3,7 +3,8 @@ const countryController = require('../controllers/countryController');
 const foodController = require('../controllers/foodController');
 
 router.route('/countries')
-  .get(countryController.countryIndexRoute);
+  .get(countryController.countryIndexRoute)
+  .post(countryController.countryCreateRoute);
 
 router.route('/countries/:id')
   .get(countryController.countryShowRoute);
