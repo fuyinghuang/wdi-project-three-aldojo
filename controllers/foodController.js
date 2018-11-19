@@ -10,9 +10,16 @@ function foodShowRoute(req, res, next) {
     .catch(next);
 }
 
+function createRoute(req, res, next) {
+  console.log('this is req. body !!!!!!!!', req.body);
+  Food.create(req.body)
+    .then(food => res.json(food))
+    .catch(next);
+}
+
 
 
 module.exports = {
-  foodShowRoute: foodShowRoute
-
+  foodShowRoute: foodShowRoute,
+  createRoute: createRoute
 };
