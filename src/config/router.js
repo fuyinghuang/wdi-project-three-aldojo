@@ -8,6 +8,7 @@ import foodNewCtrl from '../controllers/foods/foodNewCtrl';
 import foodEditCtrl from '../controllers/foods/foodEditCtrl';
 import foodsIndexCtrl from '../controllers/foods/foodIndexCtrl';
 import foodsShowCtrl from '../controllers/foods/foodShowCtrl';
+import profileCtrl from '../controllers/profileCtrl';
 
 function Router($stateProvider) {
   $stateProvider
@@ -64,6 +65,11 @@ function Router($stateProvider) {
       url: '/foods/:id/edit',
       templateUrl: './views/foods/edit.html',
       controller: foodEditCtrl
+    })
+    .state('profile', {
+      templateUrl: './views/profile.html',
+      url: '/profile/:id',
+      controller: profileCtrl
     });
 
 
