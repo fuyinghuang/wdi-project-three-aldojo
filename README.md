@@ -1,1 +1,1 @@
-# wdi-projet-three
+# wdi-project-three

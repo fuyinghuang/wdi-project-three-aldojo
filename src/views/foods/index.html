@@ -1,0 +1,12 @@
+<section>
+  <input type="text" class="input is-rounded" ng-model="$parent.searchBar">
+  <label class="title is-4 searchbar" for="/">Search for a dishes:</label>
+  <button class="button">🔎</button>
+  <hr>
+  <div ng-repeat="food in foods | filter: searchBar" class="column is-4">
+    <a ui-sref="foodShow({ id: food._id })">
+      <p>{{ food.name }}</p>
+      <img ng-src="{{ food.image }}">
+    </a>
+  </div>
+</section>

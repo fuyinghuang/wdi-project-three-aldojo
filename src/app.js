@@ -2,7 +2,8 @@ import angular from 'angular';
 import '@uirouter/angularjs';
 import Router from './config/router';
 import mainCtrl from './controllers/mainCtrl';
-
+import 'satellizer';
+import 'bulma';
 
 
 

@@ -35,7 +35,9 @@ router.route('/countries/:id')
   .delete(secureRoute, countryController.countryDeleteRoute);
 
 router.route('/countries/:countryId')
-  .post(secureRoute, foodController.foodCreateRoute);
+  .post(foodController.foodCreateRoute);
+// router.route('/countries/:countryId')
+//   .post(secureRoute, foodController.foodCreateRoute);
 
 router.route('/foods')
   .get(foodController.foodIndexRoute);

@@ -1,0 +1,48 @@
+<!-- <h1>Edit ye a country</h1>
+<form ng-submit="handleSubmit()">
+  <input ng-model="country.name">
+  <input ng-model="country.region">
+  <input ng-model="country.flagUrl">
+  <input ng-model="country.Alpha3Code">
+  <button class="button is-link">Update</button>
+</form> -->
+<!-- <h2>{{ country }}</h2> -->
+
+<!-- just for stylig -->
+<section class="section is-small">
+<div class="columns">
+  <div class="column is-4 is-offset-4">
+    <h1 class="title is-3 has-text-centered">Edit ye a country</h1>
+<form ng-submit="handleSubmit()">
+<div class="field">
+  <label class="label">Country</label>
+  <div class="control">
+    <input class="input" ng-model="country.name">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Region</label>
+  <div class="control">
+    <input class="input" ng-model="country.region">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Flag</label>
+  <div class="control">
+  <input class="input" ng-model="country.flagUrl">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Alpha3Code</label>
+  <div class="control">
+  <input class="input" ng-model="country.Alpha3Code">
+  </div>
+</div>
+<button class="button is-light">Edit</button>
+</form>
+</div>
+</div>
+</section>

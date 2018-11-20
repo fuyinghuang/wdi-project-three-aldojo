@@ -7,33 +7,10 @@ const Food = require('../models/food');
 
 mongoose.connect(environment.dbUri);
 
-
-
-
-// This removes all previous data in the collection under the name Book.
-
-// const userIds = [
-//   '5be9860fcb16d525543ceda1',
-//   '5be9860fcb16d525543ceda2',
-//   '5be9860fcb16d525543ceda3'
-// ];
 const countryIds = [
-  '5be9860fcb16d525543ceda6'
+  '5be9860fcb16d525543ceda6',
+  '5be9860fcb16d525543ceda7'
 ];
-
-// const userData = [
-//   {
-//     _id: userIds[1],
-//     username: 'Alex',
-//     email: 'alex@superdude.org.uk',
-//     password: 'pass'
-//   }, {
-//     _id: userIds[0],
-//     username: 'Grant',
-//     email: 'grant_is_great@btinternet.com',
-//     password: 'pass'
-//   }
-// ];
 
 
 const countryData = [
@@ -43,22 +20,41 @@ const countryData = [
     region: 'Asia',
     flagUrl: 'https://restcountries.eu/data/twn.svg',
     Alpha3Code: 'TWN'
+  },
+  {
+    _id: countryIds[1],
+    name: 'Argentina',
+    region: 'Americas',
+    flagUrl: 'https://restcountries.eu/data/arg.svg',
+    Alpha3Code: 'ARG'
   }
+
 ];
+
+
 
 
 const foodData = [
   {
     name: 'Bubble Tea',
     description: 'Bubble tea (also known as pearl milk tea, bubble milk tea, booby tea, bubble cup, or simply boba) (Chinese: 波霸奶茶; pinyin: bōbà nǎichá, with tapioca balls it is 珍珠奶茶; zhēnzhū nǎichá) is a Taiwanese tea-based drink invented',
-    image: 'https://www.instagram.com/p/BQmQmfqBldw/',
+    image: 'https://auchanetmoi.auchan.fr/api/v1/media_files/2885/media/798x449c',
     country: countryIds[0]
     // comments: [{
     //   text: 'Amazing!!',
     //   user: { type: mongoose.Schema.ObjectId, ref: User },
     //   createdBy: { type: mongoose.Schema.ObjectId, ref: User }
     // }]
+  },
+  {
+    name: 'Asado',
+    description: 'Asado (Spanish: [aˈsaðo]) are the techniques and the social event of having or attending a barbecue in various South American countries, where it is also a traditional event. An asado usually consists of beef, pork, chicken, chorizo, and morcilla which are cooked on a grill, called a parrilla, or an open fire. Generally the meats are accompanied by red wine and salads. This meat is prepared by a person who is the assigned asador or parrillero.',
+    image: 'https://www.196flavors.com/wp-content/uploads/2018/05/asado-paraguayo-3-FP.jpg',
+    country: countryIds[1]
+
   }
+
+
 ];
 
 
@@ -80,7 +76,7 @@ Food.collection.drop();
 
 Food.create(foodData)
   .then(foods => {
-    console.log(`Created ${foods.length}`);
+    console.log(`Created ${foods.length}foods`);
     // User.create(userData)
     //   .then(users => {
     //     mongoose.connection.close();
@@ -89,5 +85,5 @@ Food.create(foodData)
 Country.create(countryData)
   .then(countries => {
     mongoose.connection.close();
-    console.log(`Created ${countries.length}`);
+    console.log(`Created ${countries.length}countries`);
   });
