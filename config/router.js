@@ -52,6 +52,9 @@ router.route('/foods/:id')
 router.route('/foods/:foodId/vote')
   .post(secureRoute, voteController.vote);
 
+router.route('/foods/:foodId/unvote')
+  .post(secureRoute, voteController.unvote);
+
 router.route('/foods/:foodId/comments')
   .post(secureRoute, commentController.createRoute);
 

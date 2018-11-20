@@ -39,24 +39,22 @@ const foodData = [
     name: 'Bubble Tea',
     description: 'Bubble tea (also known as pearl milk tea, bubble milk tea, booby tea, bubble cup, or simply boba) (Chinese: 波霸奶茶; pinyin: bōbà nǎichá, with tapioca balls it is 珍珠奶茶; zhēnzhū nǎichá) is a Taiwanese tea-based drink invented',
     image: 'https://auchanetmoi.auchan.fr/api/v1/media_files/2885/media/798x449c',
-    country: countryIds[0]
-    // comments: [{
-    //   text: 'Amazing!!',
-    //   user: { type: mongoose.Schema.ObjectId, ref: User },
-    //   createdBy: { type: mongoose.Schema.ObjectId, ref: User }
-    // }]
+    country: countryIds[0],
+    votes: []
   },
   {
     name: 'Asado',
     description: 'Asado (Spanish: [aˈsaðo]) are the techniques and the social event of having or attending a barbecue in various South American countries, where it is also a traditional event. An asado usually consists of beef, pork, chicken, chorizo, and morcilla which are cooked on a grill, called a parrilla, or an open fire. Generally the meats are accompanied by red wine and salads. This meat is prepared by a person who is the assigned asador or parrillero.',
     image: 'https://www.196flavors.com/wp-content/uploads/2018/05/asado-paraguayo-3-FP.jpg',
-    country: countryIds[1]
+    country: countryIds[1],
+    votes: []
   },
   {
     name: 'Milanesas',
     description: 'Milanesa is a South American variation of an Italian dish where generic types of breaded meat fillet preparations are known as a milanesa. The milanesa was brought to the Southern Cone by Italian immigrants during the mass emigration called the Italian diaspora between 1860-1920s. Its name probably reflects an original Milanese preparation, cotoletta alla Milanese, which is similar to the Austrian Wiener Schnitzel. A milanesa consists of a thin slice of beef, chicken, veal, or sometimes pork, eggplants, tempeh or soy. Each slice is dipped into beaten eggs, seasoned with salt, and other condiments according to the taste of the cook (like parsley and garlic). Each slice is then dipped in bread crumbs (or occasionally flour) and shallow-fried in oil, one at a time.',
     image: 'https://restorando-res.cloudinary.com/image/upload/c_fit,f_auto,h_500,w_700/v1/restaurant_photos/b//13443/127946/restaurante_el-club-de-la-milanesa-barrio-jardin_barrio-jardin_restaurante_el-club-de-la-milanesa-lomas-de-san-isidro_zona-norte_4_guacamole.jpg',
-    country: countryIds[1]
+    country: countryIds[1],
+    votes: []
   }
 
 
@@ -82,13 +80,9 @@ Food.collection.drop();
 Food.create(foodData)
   .then(foods => {
     console.log(`Created ${foods.length}foods`);
-    // User.create(userData)
-    //   .then(users => {
-    //     mongoose.connection.close();
-  });
-
-Country.create(countryData)
-  .then(countries => {
-    mongoose.connection.close();
-    console.log(`Created ${countries.length}countries`);
+    Country.create(countryData)
+      .then(countries => {
+        mongoose.connection.close();
+        console.log(`Created ${countries.length}countries`);
+      });
   });
