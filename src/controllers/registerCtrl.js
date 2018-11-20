@@ -5,7 +5,7 @@ function registerCtrl($scope, $state, $auth) {
       .then(() => {
         $auth.login($scope.user)
           .then(() => {
-            $state.go('countryIndex');
+            $state.go('home');
           });
       })
       .catch(err => console.log('Error!', err));

@@ -52,7 +52,7 @@ router.route('/foods/:foodId/comments')
   .post(secureRoute, commentController.createRoute);
 
 router.route('/foods/:foodId/comments/:commentId')
-  .delete(commentController.deleteRoute);
+  .delete(secureRoute, commentController.deleteRoute);
 
 router.route('/countries/:countryId/comments')
   // .post(secureRoute, countryCommentController.createRoute);

@@ -42,10 +42,26 @@ function foodDeleteRoute(req, res, next) {
     .catch(next);
 }
 
+function vote(req, res, next) {
+  console.log('UPVOTE!');
+  Food
+    .findById(req.params.foodId)
+    .then(food => {
+      food.like.push(req.params.userId);
+      food.save();
+      res.json(food);
+    })
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+}
+
 module.exports = {
   foodShowRoute: foodShowRoute,
   foodIndexRoute: foodIndexRoute,
   foodCreateRoute: foodCreateRoute,
   foodUpdateRoute: foodUpdateRoute,
-  foodDeleteRoute: foodDeleteRoute
+  foodDeleteRoute: foodDeleteRoute,
+  vote: vote
 };

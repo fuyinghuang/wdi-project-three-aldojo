@@ -5,16 +5,17 @@
     <title>ALDOJO!</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
-  <body>
+  <body ng-controller="mainCtrl">
     <nav class="navbar is-light">
     <div class="navbar-brand">
       <a class="navbar-item" ui-sref="home"><i style="font-size:30px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
       <a class="navbar-item" ui-sref="home">Home</a>
       <a class="navbar-item" ui-sref="countryIndex">Countries</a>
       <a class="navbar-item" ui-sref="foodIndex">Food</a>
-      <a class="navbar-item" ui-sref="countryNew">Add a Country</a>
-      <a class="navbar-item" ui-sref="register">Register</a>
-      <a class="navbar-item" ui-sref="login">Log in</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a>
+      <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
+      <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">Log in</a>
     </div>
     </nav>
     <div ui-view></div>

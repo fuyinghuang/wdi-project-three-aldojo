@@ -1,5 +1,6 @@
 <h1 class="title is-1">{{ country.name }}</h1>
 <img src="{{ country.flagUrl }}">
+
 <button ui-sref="countryEdit({ id: country._id })">Edit</button>
 <button ng-click="handleDelete()">DELETE</button>
 
@@ -42,4 +43,4 @@
     <img ng-src="{{ food.image }}">
   </a>
 </div>
-<button ui-sref="foodNew({ id: country._id })">Add food</button>
+<button ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">Add food</button>
