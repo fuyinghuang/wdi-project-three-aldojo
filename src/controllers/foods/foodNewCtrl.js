@@ -1,5 +1,4 @@
 function foodNewCtrl($scope, $http, $state){
-  console.log('result.data.id', $state.params.id);
   $scope.handleSubmit = function() {
     $http({
       method: 'POST',
