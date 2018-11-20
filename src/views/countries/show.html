@@ -40,4 +40,4 @@
     <p>{{ food.name }}</p>
   </a>
 </div>
-<button ui-sref="foodNew({ id: country._id })">Add food</button>
+<button ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">Add food</button>

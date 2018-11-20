@@ -16,7 +16,8 @@ const foodSchema = mongoose.Schema({
         ref: 'User'
       }
     }
-  ]
+  ],
+  votes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
 const foodModel = mongoose.model('Food', foodSchema);
