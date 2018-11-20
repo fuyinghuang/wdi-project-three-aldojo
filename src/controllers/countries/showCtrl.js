@@ -11,6 +11,7 @@ function showCtrl($state, $scope, $http) {
       url: `/api/countries/${$scope.country._id}`
     }).then(() => $state.go('countryIndex'));
   };
+  
 }
 
 
