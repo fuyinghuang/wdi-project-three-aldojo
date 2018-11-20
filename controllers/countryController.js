@@ -22,7 +22,7 @@ function countryShowRoute(req, res, next) {
   console.log('req.params.id',req.params.id);
   Country
     .findById(req.params.id)
-    .populate('nationalFood')
+    .populate('nationalFood comments.commentAuthor')
     .then(country => res.json(country))
     .catch(next);
 }

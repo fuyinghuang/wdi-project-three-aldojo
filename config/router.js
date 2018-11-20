@@ -5,6 +5,7 @@ const authController = require('../controllers/authController');
 const commentController = require('../controllers/commentController');
 const voteController = require('../controllers/voteController');
 const countryCommentController = require('../controllers/countryCommentController');
+const userController = require('../controllers/userController');
 const jwt = require('jsonwebtoken');
 
 function secureRoute(req, res, next) {
@@ -37,9 +38,7 @@ router.route('/countries/:id')
   .delete(secureRoute, countryController.countryDeleteRoute);
 
 router.route('/countries/:countryId')
-  .post(foodController.foodCreateRoute);
-// router.route('/countries/:countryId')
-//   .post(secureRoute, foodController.foodCreateRoute);
+  .post(secureRoute, foodController.foodCreateRoute);
 
 router.route('/foods')
   .get(foodController.foodIndexRoute);
@@ -63,10 +62,13 @@ router.route('/foods/:foodId/comments/:commentId')
 
 router.route('/countries/:countryId/comments')
   .post(secureRoute, countryCommentController.createRoute);
-// .post(countryCommentController.createRoute);
+
 
 router.route('/countries/:countryId/comments/:commentId')
   .delete(countryCommentController.deleteRoute);
+
+router.route('/users/:id')
+  .get(userController.showProfile);
 
 
 module.exports = router;

@@ -3,9 +3,9 @@ function profileCtrl($scope, $http, $state) {
     method: 'GET',
     url: `/api/users/${$state.params.id}`
   }).then(result => {
-    // console.log('the result is', result);
+    console.log('the result is', result);
     $scope.user = result.data;
-    // console.log($scope.user);
+    console.log($scope.user);
   });
 }
 
