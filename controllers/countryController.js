@@ -4,7 +4,6 @@ const Country = require('../models/country');
 function countryIndexRoute(req, res, next) {
   Country
     .find()
-    // .populate('nationalFood')
     .then(countries => res.json(countries))
     .catch(next);
 }

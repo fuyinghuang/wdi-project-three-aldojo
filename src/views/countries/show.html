@@ -36,9 +36,9 @@
 
 
 
-<div ng-repeat="food in country.nationalFood">
+<div ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
   <a ui-sref="foodShow({ id: food._id })">
-    <p>{{ food.name }}</p>
+    <p>{{ food.name }} {{ food.voteNum }}</p>
   </a>
 </div>
 <button ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">Add food</button>
