@@ -55,8 +55,8 @@ router.route('/foods/:foodId/comments/:commentId')
   .delete(commentController.deleteRoute);
 
 router.route('/countries/:countryId/comments')
-  // .post(secureRoute, countryCommentController.createRoute);
-  .post(countryCommentController.createRoute);
+  .post(secureRoute, countryCommentController.createRoute);
+// .post(countryCommentController.createRoute);
 
 router.route('/countries/:countryId/comments/:commentId')
   .delete(countryCommentController.deleteRoute);
