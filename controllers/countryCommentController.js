@@ -9,7 +9,7 @@ function createRoute(req, res, next){
       console.log('creating a comment', req.body);
       return country.save();
     })
-    .then(country => Country.populate(country, 'comments.commentAuthor'))
+    .then(country => Country.populate(country, 'comments.commentAuthor nationalFood'))
     .then(country => res.json(country))
     .catch(next);
 }
@@ -22,7 +22,7 @@ function deleteRoute(req, res, next){
       comment.remove();
       return country.save();
     })
-    .then(country => Country.populate(country, 'comments.commentAuthor'))
+    .then(country => Country.populate(country, 'comments.commentAuthor nationalFood'))
     .then(country => res.json(country))
     .catch(next);
 }

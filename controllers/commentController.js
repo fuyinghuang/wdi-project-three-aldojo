@@ -9,7 +9,7 @@ function createRoute(req, res, next){
       console.log('creating a comment', req.body);
       return food.save();
     })
-    .then(food => Food.populate(food, 'comments.commentAuthor'))
+    .then(food => Food.populate(food, 'comments.commentAuthor nationalFood'))
     .then(food => res.json(food))
     .catch(next);
 }
@@ -22,7 +22,7 @@ function deleteRoute(req, res, next){
       comment.remove();
       return food.save();
     })
-    .then(food => Food.populate(food, 'comments.commentAuthor'))
+    .then(food => Food.populate(food, 'comments.commentAuthor nationalFood'))
     .then(food => res.json(food))
     .catch(next);
 }
