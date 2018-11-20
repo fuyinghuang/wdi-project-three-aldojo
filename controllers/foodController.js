@@ -49,7 +49,7 @@ function vote(req, res, next) {
     .then(food => {
       food.like.push(req.params.userId);
       food.save();
-      res.redirect('/countries/');
+      res.json(food);
     })
     .catch(err => {
       console.log(err);
