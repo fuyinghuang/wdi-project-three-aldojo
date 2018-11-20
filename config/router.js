@@ -3,6 +3,7 @@ const countryController = require('../controllers/countryController');
 const foodController = require('../controllers/foodController');
 const authController = require('../controllers/authController');
 const commentController = require('../controllers/commentController');
+const countryCommentController = require('../controllers/countryCommentController');
 const jwt = require('jsonwebtoken');
 
 function secureRoute(req, res, next) {
@@ -52,5 +53,13 @@ router.route('/foods/:foodId/comments')
 
 router.route('/foods/:foodId/comments/:commentId')
   .delete(commentController.deleteRoute);
+
+router.route('/countries/:countryId/comments')
+  // .post(secureRoute, countryCommentController.createRoute);
+  .post(countryCommentController.createRoute);
+
+router.route('/countries/:countryId/comments/:commentId')
+  .delete(countryCommentController.deleteRoute);
+
 
 module.exports = router;

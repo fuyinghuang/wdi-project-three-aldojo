@@ -4,7 +4,16 @@ const countrySchema = mongoose.Schema({
   name: String,
   region: String,
   flagUrl: String,
-  Alpha3Code: String
+  Alpha3Code: String,
+  comments: [
+    {
+      text: String,
+      commentAuthor: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+      }
+    }
+  ]
 });
 
 countrySchema.virtual('nationalFood', {
