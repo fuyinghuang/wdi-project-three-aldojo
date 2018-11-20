@@ -17,7 +17,16 @@ const foodSchema = mongoose.Schema({
       }
     }
   ],
-  votes: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
+  votes: [{ type: mongoose.Schema.ObjectId, ref: 'User'}]
+});
+
+foodSchema.virtual('voteNum')
+  .get(function() {
+    return this.votes.length;
+  });
+
+foodSchema.set('toJSON', {
+  virtuals: true
 });
 
 const foodModel = mongoose.model('Food', foodSchema);

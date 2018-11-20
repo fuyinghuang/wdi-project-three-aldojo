@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>ALDOJO!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body ng-controller="mainCtrl">
+
 
     <div id="nav"class="navbar-end">
       <div class="navbar-item has-dropdown is-hoverable">
         <a  class="navbar-link  is-light"></a>
         <div class="navbar-dropdown is-light" >
+          <a class="navbar-item" ui-sref="home"><i style="font-size:30px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
           <a class="navbar-item" ui-sref="home">Home</a>
           <a class="navbar-item" ui-sref="countryIndex">Countries</a>
           <a class="navbar-item" ui-sref="foodIndex">Food</a>
@@ -20,6 +23,8 @@
           <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">Log in</a>
         </div>
       </div>
+
+
     </div>
 
 
