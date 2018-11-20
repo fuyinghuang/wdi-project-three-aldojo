@@ -12,7 +12,7 @@
       <div class="hero-body">
         <!-- <div ng-if="isAuthenticated()"ng-repeat="comment in country.comments"> -->
         <div ng-repeat="comment in country.comments">
-          <span><h3>{{ comment.commentAuthor }}</h3></span>
+          <span><h3>{{ comment.commentAuthor.username }}</h3></span>
           <span><p>{{ comment.text }}</p></span>
           <!-- <button ng-if="isAuthenticated()" ng-if="comment.user._id === userId" class="button is-dark" ng-click="deleteComment(comment)">x</button> -->
           <button ng-click="deleteComment(comment)">x</button>
@@ -36,11 +36,9 @@
 
 
 
-
 <div ng-repeat="food in country.nationalFood">
   <a ui-sref="foodShow({ id: food._id })">
     <p>{{ food.name }}</p>
-    <img ng-src="{{ food.image }}">
   </a>
 </div>
 <button ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">Add food</button>
