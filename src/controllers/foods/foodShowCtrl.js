@@ -16,7 +16,10 @@ function showCtrl($state, $scope, $http) {
       method: 'POST',
       url: `/api/foods/${$state.params.id}/comments`,
       data: $scope.comment
-    }).then(result => $scope.food = result.data);
+    }).then(result => {
+      $scope.food = result.data;
+      $scope.comment.text = null;
+    });
   };
   $scope.deleteComment = function(comment){
     $http({

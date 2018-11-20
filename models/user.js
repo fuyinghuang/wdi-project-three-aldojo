@@ -15,5 +15,25 @@ userSchema.methods.validatePassword = function(attemptedPassword){
   return bcrypt.compareSync(attemptedPassword, this.password);
 };
 
+
+
+// userSchema.virtual('foodCreated', {
+//   ref: 'Food',
+//   localField: '_id',
+//   foreignField: 'createdBy'
+// });
+
+userSchema.virtual('comments', {
+  ref: 'Food',
+  localField: '_id',
+  foreignField: 'comments.user'
+});
+
+userSchema.set('toJSON', {
+  virtuals: true
+});
+
+
+
 const userModel = mongoose.model('User', userSchema);
 module.exports = userModel;

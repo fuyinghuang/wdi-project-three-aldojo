@@ -16,8 +16,14 @@ function showCtrl($state, $scope, $http) {
       method: 'POST',
       url: `/api/countries/${$state.params.id}/comments`,
       data: $scope.comment
-    }).then(result => $scope.country = result.data);
+    }).then(result => {
+      $scope.country = result.data;
+      $scope.comment.text = null;
+    });
   };
+
+
+
   $scope.deleteComment = function(comment){
     $http({
       method: 'DELETE',
