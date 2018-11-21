@@ -4,7 +4,8 @@
 <button ui-sref="foodEdit({ id: food._id })">Edit</button>
 <button ng-click="handleDelete()">DELETE</button>
 
-
+<button class="button" type="button" ng-click="vote(food)"><i class="fas fa-arrow-up"></i></button>
+<button class="button" type="button" ng-click="unvote(food)"><i class="fas fa-arrow-down"></i></button>
 
 
 <section class="section is-medium">

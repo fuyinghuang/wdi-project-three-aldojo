@@ -11,6 +11,19 @@ function showCtrl($state, $scope, $http) {
       url: `/api/countries/${$scope.country._id}`
     }).then(() => $state.go('countryIndex'));
   };
+  $scope.vote = function(food) {
+    console.log($state.params.id);
+    $http({
+      method: 'POST',
+      url: `/api/foods/${food._id}/vote`
+    });
+  };
+  $scope.unvote = function(food) {
+    $http({
+      method: 'POST',
+      url: `/api/foods/${food._id}/unvote`
+    });
+  };
   $scope.addComment = function(){
     $http({
       method: 'POST',
@@ -21,9 +34,6 @@ function showCtrl($state, $scope, $http) {
       $scope.comment.text = null;
     });
   };
-
-
-
   $scope.deleteComment = function(comment){
     $http({
       method: 'DELETE',
