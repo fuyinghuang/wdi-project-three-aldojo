@@ -1,4 +1,4 @@
-function mainCtrl($scope, $auth, $state) {
+function mainCtrl($scope, $auth, $state, Flash) {
   $scope.isAuthenticated = function() {
     if ($auth.isAuthenticated()) {
       $scope.username = $auth.getPayload().username;
@@ -7,9 +7,16 @@ function mainCtrl($scope, $auth, $state) {
     return $auth.isAuthenticated();
   };
   $scope.handleLogout = function() {
+
     $auth.logout()
-      .then(() => $state.go('home'));
+      .then(() => {
+        Flash.create('info', 'Bye bye 👋!');
+        $state.go('home');
+      }
+      );
   };
 }
+
+
 
 export default mainCtrl;
