@@ -3,6 +3,7 @@ function showCtrl($state, $scope, $http) {
     method: 'GET',
     url: `/api/foods/${$state.params.id}`
   }).then(result => {
+    console.log(result.data, 'result datas');
     $scope.food = result.data;
   });
   $scope.vote = function(food) {
