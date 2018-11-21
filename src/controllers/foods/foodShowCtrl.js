@@ -5,6 +5,23 @@ function showCtrl($state, $scope, $http) {
   }).then(result => {
     $scope.food = result.data;
   });
+  $scope.vote = function(food) {
+    console.log($state.params.id);
+    $http({
+      method: 'POST',
+      url: `/api/foods/${food._id}/vote`
+    }).then(result => {
+      $scope.food = result.data;
+    });
+  };
+  $scope.unvote = function(food) {
+    $http({
+      method: 'POST',
+      url: `/api/foods/${food._id}/unvote`
+    }).then(result => {
+      $scope.food = result.data;
+    });
+  };
   $scope.handleDelete = function() {
     $http({
       method: 'DELETE',
