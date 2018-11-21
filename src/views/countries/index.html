@@ -1,19 +1,33 @@
-<section class="section">
-  <h2 class="title is-2">Country LIST! A.K.A. INDEX</h2>
-    <div class="field has-addons is-grouped">
-      <div class="control is-expanded">
-        <input type="text" class="input is-rounded" ng-model="$parent.searchBar">
-      </div>
-    </div>
 
-  <div class="columns is-multiline">
-    <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
-      <a ui-sref="countryShow({ alpha3Code: country.alpha3Code })">
-        <h3 class="subtitle is-4">{{ country.name }} ({{ country.subregion }})</h3>
-        <figure class="image">
-          <img style="border-radius: 20px;" ng-src="{{ country.flag }}">
-        </figure>
-      </a>
-    </div>
-  </div>
-</section>
+<section class="hero is-small">
+   <div class="hero-body">
+     <div class="container has-text-centered">
+       <!-- <label class="title is-4 searchbar" for="/">Search for a dishes:</label> -->
+       <input type="text" class="input is-rounded" placeholder="looking for a country..." ng-model="$parent.searchBar">
+     </div>
+   </div>
+ </section>
+
+
+ <section class="container">
+   <div class="columns is-mobile is-multiline">
+     <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
+       <div class="column">
+         <a ui-sref="countryShow({ alpha3Code: country.alpha3Code })">
+           <div class="card is-shady">
+             <div class="card-image">
+               <figure class="image is-3by2">
+                 <img ng-src="{{ country.flag }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
+               </figure>
+             </div>
+             <div class="card-content">
+               <div class="content has-text-centered">
+                 <h4>{{ country.name }} ({{ country.subregion }})</h4>
+               </div>
+             </div>
+           </div>
+         </a>
+       </div>
+     </div>
+   </div>
+ </section>

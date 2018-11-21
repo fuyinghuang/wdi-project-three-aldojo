@@ -11,7 +11,15 @@ import foodsIndexCtrl from '../controllers/foods/foodIndexCtrl';
 import foodsShowCtrl from '../controllers/foods/foodShowCtrl';
 import profileCtrl from '../controllers/profileCtrl';
 
-function Router($stateProvider) {
+function secureRoute($auth, $state, Flash) {
+  if (!$auth.isAuthenticated()) {
+    Flash.create('info', 'Please log in');
+    $state.go('login');
+  }
+}
+
+
+function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
@@ -39,12 +47,14 @@ function Router($stateProvider) {
     .state('countryNew', {
       templateUrl: './views/countries/new.html',
       url: '/countries/new/:alpha3Code',
-      controller: countriesNewCtrl
+      controller: countriesNewCtrl,
+      resolve: { secureRoute }
     })
     .state('countryEdit', {
       templateUrl: './views/countries/edit.html',
       url: '/countries/:id/edit',
-      controller: countriesEditCtrl
+      controller: countriesEditCtrl,
+      resolve: { secureRoute }
     })
     .state('foodIndex', {
       templateUrl: './views/foods/index.html',
@@ -59,19 +69,21 @@ function Router($stateProvider) {
     .state('foodNew', {
       url: '/foods/:id/new',
       templateUrl: './views/foods/new.html',
-      controller: foodNewCtrl
+      controller: foodNewCtrl,
+      resolve: { secureRoute }
     })
     .state('foodEdit', {
       url: '/foods/:id/edit',
       templateUrl: './views/foods/edit.html',
-      controller: foodEditCtrl
+      controller: foodEditCtrl,
+      resolve: { secureRoute }
     })
     .state('profile', {
       templateUrl: './views/profile.html',
       url: '/profile/:id',
       controller: profileCtrl
     });
-
+  $urlRouterProvider.otherwise('/');
 
 }
 

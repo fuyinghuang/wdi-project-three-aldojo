@@ -11,6 +11,7 @@ function foodIndexRoute(req, res, next) {
 function foodShowRoute(req, res, next) {
   Food
     .findById(req.params.id)
+    .populate('nationalFood comments.commentAuthor')
     .then(food => res.json(food))
     .catch(next);
 }

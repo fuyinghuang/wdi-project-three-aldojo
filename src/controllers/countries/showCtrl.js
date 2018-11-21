@@ -28,6 +28,7 @@ function showCtrl($state, $scope, $http, $location) {
       url: `/api/foods/${food._id}/unvote`
     });
   };
+
   $scope.addComment = function(){
     $http({
       method: 'POST',
