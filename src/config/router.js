@@ -36,11 +36,6 @@ function Router($stateProvider) {
       url: '/countries/:alpha3Code',
       controller: countriesShowCtrl
     })
-    // .state('countryShow', {
-    //   templateUrl: './views/countries/show.html',
-    //   url: '/countries/:id',
-    //   controller: countriesShowCtrl
-    // })
     .state('countryNew', {
       templateUrl: './views/countries/new.html',
       url: '/countries/new/:alpha3Code',
