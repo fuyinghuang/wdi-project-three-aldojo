@@ -10,8 +10,8 @@
 
 
  <section class="container">
-   <div class="columns is-mobile is-multiline">
-     <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
+   <div class="columns is-mobile is-tablet is-multiline">
+     <div ng-repeat="country in countries | filter: searchBar" class="column is-4-desktop is-6-tablet is-12-mobile">
        <div class="column">
          <a ui-sref="countryShow({ alpha3Code: country.alpha3Code })">
            <div class="card is-shady">

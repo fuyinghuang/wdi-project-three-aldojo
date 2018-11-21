@@ -20,8 +20,8 @@
 
 
  <section class="container">
-   <div class="columns is-mobile is-multiline">
-     <div ng-repeat="food in foods | filter: searchBar" class="column is-4">
+   <div class="columns is-mobile is-tablet is-multiline">
+     <div ng-repeat="food in foods | filter: searchBar" class="column is-4-desktop is-6-tablet is-12-mobile">
        <div class="column">
          <a ui-sref="foodShow({ id: food._id })">
            <div class="card is-shady">

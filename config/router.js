@@ -68,7 +68,7 @@ router.route('/countries/:countryId/comments')
 
 
 router.route('/countries/:countryId/comments/:commentId')
-  .delete(countryCommentController.deleteRoute);
+  .delete(secureRoute, countryCommentController.deleteRoute);
 
 router.route('/users/:id')
   .get(userController.showProfile);
