@@ -21,9 +21,6 @@ function showCtrl($state, $scope, $http) {
       $scope.comment.text = null;
     });
   };
-
-
-
   $scope.deleteComment = function(comment){
     $http({
       method: 'DELETE',
