@@ -1,9 +1,13 @@
-function showCtrl($state, $scope, $http) {
+function showCtrl($state, $scope, $http, $location) {
   $http({
     method: 'GET',
-    url: `/api/countries/${$state.params.id}`
+    url: `/api/countries/alpha3/${$state.params.alpha3Code}`
   }).then(result => {
-    $scope.country = result.data;
+    if (result.data) {
+      $scope.country = result.data;
+    } else {
+      $location.path(`/countries/new/${$state.params.alpha3Code}`).replace();
+    }
   });
   $scope.handleDelete = function() {
     $http({
@@ -12,7 +16,7 @@ function showCtrl($state, $scope, $http) {
     }).then(() => $state.go('countryIndex'));
   };
   $scope.vote = function(food) {
-    console.log($state.params.id);
+    console.log($state.params.alpha3Code);
     $http({
       method: 'POST',
       url: `/api/foods/${food._id}/vote`
@@ -27,7 +31,7 @@ function showCtrl($state, $scope, $http) {
   $scope.addComment = function(){
     $http({
       method: 'POST',
-      url: `/api/countries/${$state.params.id}/comments`,
+      url: `/api/countries/${$scope.country._id}/comments`,
       data: $scope.comment
     }).then(result => {
       $scope.country = result.data;
@@ -37,7 +41,7 @@ function showCtrl($state, $scope, $http) {
   $scope.deleteComment = function(comment){
     $http({
       method: 'DELETE',
-      url: `/api/countries/${$state.params.id}/comments/${comment._id}`
+      url: `/api/countries/${$scope.country._id}/comments/${comment._id}`
     }).then(result => $scope.country = result.data);
   };
 

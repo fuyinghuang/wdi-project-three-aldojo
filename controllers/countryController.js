@@ -26,6 +26,12 @@ function countryShowRoute(req, res, next) {
     .catch(next);
 }
 
+function countryAlphaShowRoute(req, res) {
+  Country.findOne({alpha3Code: req.params.alpha3Code})
+    .populate('nationalFood comments.commentAuthor')
+    .then(country => res.json(country));
+}
+
 function countryUpdateRoute(req, res, next) {
   console.log('updating country');
   Country
@@ -45,10 +51,7 @@ function countryDeleteRoute(req, res, next) {
     .catch(next);
 }
 
-function countryAlphaRoute(req, res) {
-  Country.findOne({alpha3Code: req.params.alpha3Code})
-    .then(country => res.json(country));
-}
+
 
 
 
@@ -58,5 +61,5 @@ module.exports = {
   countryShowRoute: countryShowRoute,
   countryUpdateRoute: countryUpdateRoute,
   countryDeleteRoute: countryDeleteRoute,
-  countryAlphaRoute: countryAlphaRoute
+  countryAlphaShowRoute: countryAlphaShowRoute
 };
