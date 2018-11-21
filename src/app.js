@@ -9,7 +9,7 @@ import 'bulma';
 import './style/main.scss';
 
 
-angular.module('Aldojo', ['ui.router', 'satellizer'])
+angular.module('Aldojo', ['ui.router', 'satellizer', 'ngFlash'])
   .config(Router)
   .controller('mainCtrl', mainCtrl)
   .config(function($authProvider){

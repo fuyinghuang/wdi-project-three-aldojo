@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const environment = require('../config/environment');
 const Country = require('../models/country');
+const User = require('../models/user');
 
 const Food = require('../models/food');
 // const User = require('../models/user');
@@ -11,7 +12,22 @@ const countryIds = [
   '5be9860fcb16d525543ceda6',
   '5be9860fcb16d525543ceda7'
 ];
+const userIds = [
+  '5be9860fcb16d525543ceda9',
+  '5be9860fcb16d525543ceda8'
+];
 
+const userData = [{
+  _id: userIds[0],
+  username: 'Rob',
+  email: 'rob@rob',
+  password: 'pass'
+}, {
+  _id: userIds[1],
+  username: 'Doris',
+  email: 'doris@doris',
+  password: 'pass'
+}];
 
 const countryData = [
   {
@@ -31,23 +47,35 @@ const countryData = [
 
 ];
 
-
-
-
 const foodData = [
   {
     name: 'Bubble Tea',
     description: 'Bubble tea (also known as pearl milk tea, bubble milk tea, booby tea, bubble cup, or simply boba) (Chinese: 波霸奶茶; pinyin: bōbà nǎichá, with tapioca balls it is 珍珠奶茶; zhēnzhū nǎichá) is a Taiwanese tea-based drink invented',
     image: 'https://auchanetmoi.auchan.fr/api/v1/media_files/2885/media/798x449c',
     country: countryIds[0],
-    votes: []
+    votes: [],
+    comments: [{
+      text: 'tasty!!!!',
+      commentAuthor: userIds[0]
+    }, {
+      text: 'awful!!!!',
+      commentAuthor: userIds[1]
+    }
+    ]
   },
   {
     name: 'Asado',
     description: 'Asado (Spanish: [aˈsaðo]) are the techniques and the social event of having or attending a barbecue in various South American countries, where it is also a traditional event. An asado usually consists of beef, pork, chicken, chorizo, and morcilla which are cooked on a grill, called a parrilla, or an open fire. Generally the meats are accompanied by red wine and salads. This meat is prepared by a person who is the assigned asador or parrillero.',
     image: 'https://www.196flavors.com/wp-content/uploads/2018/05/asado-paraguayo-3-FP.jpg',
     country: countryIds[1],
-    votes: []
+    votes: [],
+    comments: [{
+      text: 'I don\'t know this food!!!!',
+      commentAuthor: userIds[0]
+    }, {
+      text: 'yuk!!!!',
+      commentAuthor: userIds[1]
+    }]
   },
   {
     name: 'Milanesas',
@@ -56,13 +84,12 @@ const foodData = [
     country: countryIds[1],
     votes: []
   }
-
-
 ];
 
 
 Country.collection.drop();
 Food.collection.drop();
+User.collection.drop();
 // User.collection.drop();
 
 // Country.create(countryData)
@@ -82,7 +109,11 @@ Food.create(foodData)
     console.log(`Created ${foods.length}foods`);
     Country.create(countryData)
       .then(countries => {
-        mongoose.connection.close();
         console.log(`Created ${countries.length}countries`);
+        User.create(userData)
+          .then(users => {
+            console.log(`Created ${users.length} users`);
+            mongoose.connection.close();
+          });
       });
   });

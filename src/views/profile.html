@@ -17,9 +17,11 @@
       <div class="column is-4 is-offset-2">
         <div class="field">
           <h3 class="subtitle is-3"><label id="reviewed" class="label">Have reviewed...</label></h3>
-          <div ng-repeat="comment in comments.user">
-            <span><h3>{{ food }}</h3></span>
+          <div ng-repeat="comment in commentAuthor.comments">
+            <a ui-sref="foodShow({ id: food._id })">
+            <!-- <span><h3>{{ comment.user.commentAuthor }}</h3></span> -->
             <span><p>{{ comment.name }}</p></span>
+            </a>
           </div>
         </div>
       </div>
