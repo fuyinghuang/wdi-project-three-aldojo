@@ -4,8 +4,8 @@ function profileCtrl($scope, $http, $state) {
     url: `/api/users/${$state.params.id}`
   }).then(result => {
     console.log('the result is', result);
-    $scope.user = result.data;
-    console.log($scope.user);
+    $scope.commentAuthor = result.data;
+    console.log('this is', $scope.commentAuthor);
   });
 }
 

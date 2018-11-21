@@ -1,0 +1,32 @@
+.home{
+  padding-top: 10px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #69e0de;
+}
+#bar{
+  color: #69e0de;
+}
+#adj{
+  font-size: 110px;
+  font-family: 'Lobster', cursive;
+  color: white;
+  animation-name: grow 5s infinite;
+  &:hover {
+    opacity: 0.3;
+  }
+}
+@keyframes grow-up {
+  0% {
+    font-size: 600PX;
+  }
+  50%{
+    font-size: 800px;
+  }
+  100% {
+    font-size: 600px;
+}
+}

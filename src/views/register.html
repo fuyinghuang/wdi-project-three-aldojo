@@ -1,30 +1,38 @@
-<section class="section is-small">
-  <div class="columns">
-    <div class="column is-4 is-offset-4">
-      <h1 class="title is-3 has-text-centered">🥙🍔 Register 🥑 </h1>
-      <form ng-submit="handleRegister()">
-        <div class="field">
-          <label for="username">Username:</label>
-          <div class="control">
-            <input class="input" name="username" ng-model="user.username">
-          </div>
-        </div>
+<section class="auth" class="hero is-fullheight">
+   <div class="hero-body">
+     <div class="container has-text-centered">
+       <div class="column is-4 is-offset-4">
+         <h3 class="title has-text-white">Register</h3>
+         <p class="subtitle has-text-white">Register to travel</p>
+         <div class="box">
+           <form ng-submit="handleRegister()">
+             <div class="field">
+               <div class="control">
+                 <input class="input " name="username" ng-model="user.username" placeholder="Username" >
+               </div>
+             </div>
+             <div class="field">
+               <div class="control">
+                 <input class="input" name="email" ng-model="user.email"  placeholder="Your Email" >
+               </div>
+             </div>
 
-        <div class="field">
-          <label for="email">Email:</label>
-          <div class="control">
-            <input class="input" name="email" ng-model="user.email">
-          </div>
-        </div>
+             <div class="field">
+               <div class="control">
+                 <input class="input" name="password" ng-model="user.password" type="password" placeholder="Your Password">
+               </div>
+             </div>
+             <div class="field">
+               <label class="checkbox">
+                 <input type="checkbox">
+                 Remember me
+               </label>
+             </div>
+             <button class="button is-primary">Register</button>
+           </form>
+         </div>
 
-        <div class="field">
-          <label for="password">Password:</label>
-          <div class="control">
-            <input class="input" name="password" type="password" ng-model="user.password">
-          </div>
-        </div>
-        <button class="button is-light">Register</button>
-      </form>
-    </div>
-  </div>
-</section>
+     </div>
+   </div>
+ </div>
+ </section>

@@ -1,0 +1,42 @@
+// #earth{
+//   color:black;
+//   display: block;
+//     margin: 20px;
+//     border-radius: 50%;
+//     height: 50px;
+//     width: 50px;
+//     background: radial-gradient(circle at 50px 50px, #00d4b185, #000);
+//     animation-name: spin;
+//     animation-duration: 4000ms;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: linear;
+// }
+
+#earth{
+  animation: grow 5s infinite;
+  color: grey;
+      &:hover {
+        opacity: 0.3;
+      }
+}
+@keyframes grow {
+  0% {
+    font-size: 20PX;
+  }
+  50%{
+    font-size: 40px;
+  }
+  100% {
+    font-size: 30px;
+}
+}
+@keyframes spin {
+        from {
+            transform: rotate(0deg);
+        } to {
+            transform: rotate(360deg);
+        }
+    }
+a{
+font-family: 'Roboto', sans-serif;
+}

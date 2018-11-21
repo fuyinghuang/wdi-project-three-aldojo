@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>ALDOJO!</title>
+    <link rel="shortcut icon" href="./style/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
-
-
-    <div id="nav"class="navbar-end">
+  <nav class="bar" class="navbar">
+    <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a  class="navbar-link  is-light"></a>
-        <div class="navbar-dropdown is-light" >
-          <a class="navbar-item" ui-sref="home"><i style="font-size:30px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
-          <a class="navbar-item" ui-sref="home">Home</a>
+        <a id="link" class="navbar-link"></a>
+        <!-- <a  class="navbar" ><i id="earth"style="font-size:30px;" class="fas fa-globe-americas"></i></a> -->
+        <div class="navbar-dropdown" >
+        <!-- <div class="navbar" > -->
+          <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
+          <!-- <a class="navbar-item" ui-sref="home">Home</a> -->
           <a class="navbar-item" ui-sref="countryIndex">Countries</a>
           <a class="navbar-item" ui-sref="foodIndex">Food</a>
           <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a>
@@ -23,42 +27,12 @@
           <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">Log in</a>
         </div>
       </div>
-
-
     </div>
-
-
+  </nav>
+  <flash-message></flash-message>
     <div ui-view></div>
   </body>
+
+
+
 </html>
-
-
-
-
-
-
-
-
-<!-- <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
- -->
