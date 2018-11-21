@@ -24,7 +24,7 @@
      <div ng-repeat="food in foods | filter: searchBar" class="column is-4-desktop is-6-tablet is-12-mobile">
        <div class="column">
          <a ui-sref="foodShow({ id: food._id })">
-           <div class="card is-shady">
+           <div id="foodmasonry" class="card is-shady">
              <div class="card-image">
                <figure class="image is-4by3">
                  <img ng-src="{{ food.image }}" alt="{{food.name}}" class="modal-button" data-target="modal-image2">
