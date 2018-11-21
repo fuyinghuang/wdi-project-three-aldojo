@@ -1,19 +1,32 @@
-<section class="section">
-  <h2 class="title is-2 has-text-centered">Country List</h2>
-    <div class="field has-addons is-grouped">
-      <div class="control is-expanded">
-        <input type="text" class="input is-rounded" ng-model="$parent.searchBar">
-      </div>
-    </div>
+<section class="hero is-small">
+   <div class="hero-body">
+     <div class="container has-text-centered">
+       <!-- <label class="title is-4 searchbar" for="/">Search for a dishes:</label> -->
+       <input type="text" class="input is-rounded" placeholder="looking for a country..." ng-model="$parent.searchBar">
+     </div>
+   </div>
+ </section>
 
-  <div class="columns is-multiline">
-    <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
-      <a ui-sref="countryShow({ id: country._id })">
-        <h3 class="subtitle is-4">{{ country.name }}</h3>
-        <figure class="image">
-          <img style="border-radius: 20px;" ng-src="{{ country.flagUrl }}" alt="{{ country.name }}" />
-        </figure>
-      </a>
-    </div>
-  </div>
-</section>
+
+ <section class="container">
+   <div class="columns is-mobile is-multiline">
+     <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
+       <div class="column">
+         <a ui-sref="countryShow({ id: country._id })">
+           <div class="card is-shady">
+             <div class="card-image">
+               <figure class="image is-3by2">
+                 <img ng-src="{{ country.flagUrl }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
+               </figure>
+             </div>
+             <div class="card-content">
+               <div class="content has-text-centered">
+                 <h4>{{ country.name }}</h4>
+               </div>
+             </div>
+           </div>
+         </a>
+       </div>
+     </div>
+   </div>
+ </section>
