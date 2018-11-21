@@ -65,14 +65,16 @@ const countryData = [
     name: 'Taiwan',
     region: 'Asia',
     flagUrl: 'https://restcountries.eu/data/twn.svg',
-    Alpha3Code: 'TWN'
+    alpha3Code: 'TWN'
   },
   {
     _id: countryIds[1],
     name: 'Argentina',
     region: 'Americas',
     flagUrl: 'https://restcountries.eu/data/arg.svg',
-    Alpha3Code: 'ARG'
+
+    alpha3Code: 'ARG'
+
   }, {
     _id: countryIds[2],
     name: 'United Kingdom',

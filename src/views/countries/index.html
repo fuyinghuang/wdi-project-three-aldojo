@@ -1,3 +1,4 @@
+
 <section class="hero is-small">
    <div class="hero-body">
      <div class="container has-text-centered">
@@ -12,16 +13,16 @@
    <div class="columns is-mobile is-multiline">
      <div ng-repeat="country in countries | filter: searchBar" class="column is-4">
        <div class="column">
-         <a ui-sref="countryShow({ id: country._id })">
+         <a ui-sref="countryShow({ alpha3Code: country.alpha3Code })">
            <div class="card is-shady">
              <div class="card-image">
                <figure class="image is-3by2">
-                 <img ng-src="{{ country.flagUrl }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
+                 <img ng-src="{{ country.flag }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
                </figure>
              </div>
              <div class="card-content">
                <div class="content has-text-centered">
-                 <h4>{{ country.name }}</h4>
+                 <h4>{{ country.name }} ({{ country.subregion }})</h4>
                </div>
              </div>
            </div>
