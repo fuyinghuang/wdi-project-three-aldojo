@@ -14,7 +14,9 @@ const countryIds = [
   '5be9860fcb16d525543ceda5',
   '5be9860fcb16d525543cfda8',
   '5be9860fcb16d525543cdda1',
-  '5be9860fcb16d525543cddd2'
+  '5be9860fcb16d525543cddd2',
+  '5be9860fcb16d525543cdcd5',
+  '5be9860fcb16d525543cdcc1'
 ];
 const userIds = [
   '5be9860fcb16d525543ceda9',
@@ -98,6 +100,21 @@ const countryData = [
     region: 'Americas',
     flagUrl: 'https://restcountries.eu/data/col.svg',
     Alpha3Code: 'COL'
+
+  },
+  {
+    _id: countryIds[6],
+    name: 'Nigeria',
+    region: 'Africa',
+    flagUrl: 'https://restcountries.eu/data/ner.svg',
+    Alpha3Code: 'NGA'
+  },
+  {
+    _id: countryIds[7],
+    name: 'German',
+    region: 'Europe',
+    flagUrl: 'https://restcountries.eu/data/geo.svg',
+    Alpha3Code: 'DEU'
 
   }
 
