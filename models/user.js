@@ -17,11 +17,12 @@ userSchema.methods.validatePassword = function(attemptedPassword){
 
 
 
-userSchema.virtual('commentCreated', {
+userSchema.virtual('comments', {
   ref: 'Food',
   localField: '_id',
-  foreignField: 'commentedBy'
+  foreignField: 'comments.user'
 });
+
 
 
 

@@ -1,7 +1,11 @@
 .home{
-  background-color: #69e0de;
+  padding-top: 10px;
+  width: 100vw;
   height: 100vh;
-  margin-bottom: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #69e0de;
 }
 #bar{
   color: #69e0de;
@@ -9,7 +13,6 @@
 #adj{
   font-size: 110px;
   font-family: 'Lobster', cursive;
-  margin-top: 30vh;
   color: white;
   animation-name: grow 5s infinite;
   &:hover {

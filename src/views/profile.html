@@ -1,7 +1,7 @@
 <section class="section is-medium">
   <h2 class="title is-2 has-text-centered">Profile of {{ username }} </h2>
   <hr />
-  <div class="hero-body">
+  <!-- <div class="hero-body">
     <div class="columns">
       <div class="column is-4 is-offset-2">
         <div class="field">
@@ -12,18 +12,17 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
 
-        <!-- <div class="column is-4 is-offset-2">
-          <div class="field">
-            <h3 class="subtitle is-3"><label class="label">Have reviewed...</label></h3>
-            <div ng-repeat="comment in user.comments">
-              <span><h3>{{ comment.user.username }}</h3></span>
-              <span><p>{{ comment.name }}</p></span>
-            </div>
+      <div class="column is-4 is-offset-2">
+        <div class="field">
+          <h3 class="subtitle is-3"><label id="reviewed" class="label">Have reviewed...</label></h3>
+          <div ng-repeat="comment in comments.user">
+            <span><h3>{{ food }}</h3></span>
+            <span><p>{{ comment.name }}</p></span>
           </div>
-        </div> -->
-
+        </div>
       </div>
-    </div>
+
+
 </section>
