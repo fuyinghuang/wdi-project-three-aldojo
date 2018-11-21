@@ -37,6 +37,9 @@ router.route('/countries/:id')
   .put(secureRoute, countryController.countryUpdateRoute)
   .delete(secureRoute, countryController.countryDeleteRoute);
 
+router.route('/countries/alpha3Code/:alpha3Code')
+  .get(countryController.countryAlphaRoute);
+
 router.route('/countries/:countryId')
   .post(secureRoute, foodController.foodCreateRoute);
 

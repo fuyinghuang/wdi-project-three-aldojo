@@ -1,5 +1,4 @@
 const Country = require('../models/country');
-// const Food = require('../models/food');
 
 function countryIndexRoute(req, res, next) {
   Country
@@ -46,11 +45,18 @@ function countryDeleteRoute(req, res, next) {
     .catch(next);
 }
 
+function countryAlphaRoute(req, res) {
+  Country.findOne({alpha3Code: req.params.alpha3Code})
+    .then(country => res.json(country));
+}
+
+
 
 module.exports = {
   countryIndexRoute: countryIndexRoute,
   countryCreateRoute: countryCreateRoute,
   countryShowRoute: countryShowRoute,
   countryUpdateRoute: countryUpdateRoute,
-  countryDeleteRoute: countryDeleteRoute
+  countryDeleteRoute: countryDeleteRoute,
+  countryAlphaRoute: countryAlphaRoute
 };

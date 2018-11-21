@@ -4,7 +4,7 @@ const countrySchema = mongoose.Schema({
   name: String,
   region: String,
   flagUrl: String,
-  Alpha3Code: String,
+  alpha3Code: String,
   comments: [
     {
       text: String,
