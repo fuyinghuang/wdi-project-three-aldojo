@@ -17,6 +17,4 @@ function mainCtrl($scope, $auth, $state, Flash) {
   };
 }
 
-
-
 export default mainCtrl;

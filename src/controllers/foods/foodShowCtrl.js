@@ -17,6 +17,7 @@ function showCtrl($state, $scope, $http) {
       url: `/api/foods/${$state.params.id}/comments`,
       data: $scope.comment
     }).then(result => {
+      console.log('this is result.data', result.data);
       $scope.food = result.data;
       $scope.comment.text = null;
     });
