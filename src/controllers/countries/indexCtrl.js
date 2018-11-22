@@ -1,14 +1,3 @@
-// function indexCtrl($scope, $http) {
-//   $http({
-//     method: 'GET',
-//     url: '/api/countries'
-//   }).then(result => {
-//     $scope.allCountries = result.data;
-//   });
-//
-// }
-
-// doris verison the filter somehow doesn't work, I made some changes
 function indexCtrl($state, $scope, $http) {
   $http({
     method: 'GET',

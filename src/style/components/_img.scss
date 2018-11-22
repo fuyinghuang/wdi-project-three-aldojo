@@ -1,0 +1,17 @@
+div#masonry  {
+  transition: .9s opacity;
+  padding: 7px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.1;
+  }
+}
+
+div#foodmasonry  {
+  transition: .9s opacity;
+  padding: 7px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.1;
+  }
+}

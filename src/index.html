@@ -3,35 +3,83 @@
   <head>
     <meta charset="utf-8">
     <title>ALDOJO!</title>
-    <link rel="shortcut icon" href="./style/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="style/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
-  <nav class="bar" class="navbar">
-    <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a id="link" class="navbar-link"></a>
-        <!-- <a  class="navbar" ><i id="earth"style="font-size:30px;" class="fas fa-globe-americas"></i></a> -->
-        <div class="navbar-dropdown" >
-        <!-- <div class="navbar" > -->
-          <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
-          <!-- <a class="navbar-item" ui-sref="home">Home</a> -->
-          <a class="navbar-item" ui-sref="countryIndex">Countries</a>
-          <a class="navbar-item" ui-sref="foodIndex">Food</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">Profile</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">Log in</a>
+
+    <nav class="navbar is-fixed-top index">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" ui-sref="home">
+            <figure class="image is-32x32">
+              <img src="style/favicon.ico" alt="Logo">
+            </figure>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"  data-target="navMenu">
+            <span class="burger-color" aria-hidden="true"></span>
+            <span class="burger-color" aria-hidden="true"></span>
+            <span class="burger-color" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="navbar-menu dropdown">
+          <div class="navbar-end">
+            <!-- <a class="navbar-item is-active  ui-sref="home">">
+            <i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO
+          </a> -->
+          <a ui-sref-active="is-active" class="navbar-item " ui-sref="countryIndex">
+            COUNTRIES
+          </a>
+          <a ui-sref-active="is-active" class="navbar-item " ui-sref="foodIndex">
+            FOOD
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              ACCOUNT
+            </a>
+            <div class="navbar-dropdown">
+              <a ui-sref-active="is-active" ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">
+                LOG OUT {{ username }}
+              </a>
+              <a ui-sref-active="is-active" ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">
+                REGISTER
+              </a>
+              <a ui-sref-active="is-active" ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">
+                LOG IN
+              </a>
+              <hr class="navbar-divider">
+
+              <a ui-sref-active="is-active" ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">
+                PROFILE
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </nav>
+
+<script type="text/javascript">
+  const burger = document.getElementsByClassName('navbar-burger')[0];
+  const dropdown = document.getElementsByClassName('dropdown')[0];
+  const options = document.getElementsByClassName('navbar-item');
+  ToggleDropdown = function() {
+    burger.classList.toggle("is-active");
+    dropdown.classList.toggle("is-active")
+  }
+  burger.addEventListener('click', ToggleDropdown);
+  for (let i=0; i < options.length; i++ ) {
+    options[i].addEventListener('click', ToggleDropdown)
+  }
+</script>
+
+
   <flash-message></flash-message>
     <div ui-view></div>
   </body>
-
-
 </html>

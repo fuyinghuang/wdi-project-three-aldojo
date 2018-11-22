@@ -8,7 +8,7 @@ function editCtrl($scope, $state, $http) {
       method: 'PUT',
       url: `/api/foods/${$state.params.id}`,
       data: $scope.food
-    }).then(result => $state.go('foodShow', {id: $state.params.id}));
+    }).then(() => $state.go('foodShow', {id: $state.params.id}));
   };
 }
 
