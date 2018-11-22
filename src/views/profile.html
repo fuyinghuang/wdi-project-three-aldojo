@@ -47,23 +47,27 @@
       <div class="card">
         <div class="card-content skills-content">
           <h3 class="title is-4 has-text-centered"> <strong>Profile </strong></h3>
+          <hr />
           <div class="content">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>Food reviewed:</strong>
-                    <br>
-                  </p>
-                  <div ng-repeat="comment in commentAuthor.foodComments">
-                    <a ui-sref="foodShow({ id: comment.id })">
-                      <span><h3>{{ comment.user.commentAuthor }}</h3></span>
-                      <p>{{ comment.name }}</p>
-                    </a>
+            <div class="columns is-mobile">
+              <div class="column is-6 is-offset-1">
+                <article class="media">
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>Food reviewed:</strong>
+                        <br>
+                      </p>
+                      <div ng-repeat="comment in commentAuthor.foodComments">
+                        <a ui-sref="foodShow({ id: comment.id })">
+                          <p>{{ comment.name }}</p>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </article>
+                </article>
+          </div>
+          <div class="column is-6 is-multiline">
             <article class="media">
               <div class="media-content">
                 <div class="content">
@@ -71,14 +75,21 @@
                     <strong>Country reviewed:</strong>
                     <br>
                   </p>
-                  <div ng-repeat="comment in commentAuthor.countryComments">
-                    <a ui-sref="countryShow({ alpha3Code: comment.alpha3Code })">
-                      <p>{{ comment.name }}</p>
-                    </a>
+                  <div>
+                    <div id="level" ng-repeat="comment in commentAuthor.countryComments">
+                      <a ui-sref="countryShow({ alpha3Code: comment.alpha3Code })">
+                        <p>{{ comment.name }}</p>
+                        <br />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+        <div class="columns is-mobile ">
+          <div class="column is-6 is-offset-1">
             <article class="media">
               <div class="media-content">
                 <div class="content">
@@ -89,16 +100,20 @@
                 </div>
               </div>
             </article>
+          </div>
+          <div class="column is-6 ">
             <article class="media">
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>Counrey added/strong>
+                    <strong>Counrey added </strong>
                       <br>
                     </p>
                   </div>
                 </div>
               </article>
+            </div>
+            </div>
             </div>
           </div>
         </div>
