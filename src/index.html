@@ -12,21 +12,55 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
-  <nav class="bar" class="navbar">
-    <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a id="link" class="navbar-link"></a>
-        <!-- <a  class="navbar" ><i id="earth"style="font-size:30px;" class="fas fa-globe-americas"></i></a> -->
-        <div class="navbar-dropdown index" >
-        <!-- <div class="navbar" > -->
-          <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
-          <a class="navbar-item" ui-sref="countryIndex">COUNTRIES</a>
-          <a class="navbar-item" ui-sref="foodIndex">FOOD</a>
-          <!-- <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a> -->
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">PROFILE</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username }}</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">LOG IN</a>
+
+    <nav class="navbar index">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" ui-sref="home">
+            <figure class="image is-32x32">
+              <img src="./style/favicon.ico" alt="Logo">
+            </figure>
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-end">
+            <!-- <a class="navbar-item is-active  ui-sref="home">">
+            <i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO
+          </a> -->
+          <a class="navbar-item is-active" ui-sref="countryIndex">
+            COUNTRIES
+          </a>
+          <a class="navbar-item is-active" ui-sref="foodIndex">
+            FOOD
+          </a>
+          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">
+            PROFILE
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              ACCOUNT
+            </a>
+            <div class="navbar-dropdown">
+              <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">
+                LOG OUT {{ username }}
+              </a>
+              <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">
+                REGISTER
+              </a>
+              <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">
+                LOG IN
+              </a>
+              <hr class="navbar-divider">
+              <div class="navbar-item">
+                COMING SOON
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,6 +68,4 @@
   <flash-message></flash-message>
     <div ui-view></div>
   </body>
-
-
 </html>
