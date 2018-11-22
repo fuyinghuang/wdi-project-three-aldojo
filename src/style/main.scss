@@ -14,11 +14,22 @@
   padding-top: 100px;
 }
 
-.resultsBox {
-  margin: auto;
+
+
+.home-image {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-Vg6Oxx/earth-zoom-out-to-space-satellites-and-moon-orbiting-around-the-earth-4k_vy8x2lrhx__F0006.png);
+  background-size: cover;
+  h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
 }
-
-
 
 
 
