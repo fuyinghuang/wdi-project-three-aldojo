@@ -39,7 +39,8 @@ function Router($urlRouterProvider, $stateProvider) {
       templateUrl: './views/countries/index.html',
       url: '/countries',
       controller: countriesIndexCtrl
-    }).state('countryShow', {
+    })
+    .state('countryShow', {
       templateUrl: './views/countries/show.html',
       url: '/countries/:alpha3Code',
       controller: countriesShowCtrl
