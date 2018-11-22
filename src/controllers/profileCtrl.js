@@ -9,6 +9,10 @@ function profileCtrl($scope, $http, $state) {
       if(index === 0) return true;
       return array[index - 1].id !== country.id;
     });
+    $scope.commentAuthor.foodComments = $scope.commentAuthor.foodComments.sort().filter((food, index, array) => {
+      if(index === 0) return true;
+      return array[index - 1].id !== food.id;
+    });
   });
 }
 
