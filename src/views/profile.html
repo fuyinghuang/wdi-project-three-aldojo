@@ -57,6 +57,7 @@
                   </p>
                   <div ng-repeat="comment in commentAuthor.comments">
                     <a ui-sref="foodShow({ id: comment.id })">
+                      <!-- <span><h3>{{ comment.user.commentAuthor }}</h3></span> -->
                       <p>{{ comment.name }}</p>
                     </a>
                   </div>
@@ -67,9 +68,15 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>Food created:</strong>
+                    <strong>Country reviewed:</strong>
                     <br>
                   </p>
+                  <div ng-repeat="comment in commentAuthor.comments">
+                    <a ui-sref="countryShow({ id: comment.id })">
+                      <p>{{ comments.name }}</p>
+                      <p>{{ name }}</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </article>
@@ -77,7 +84,7 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong>Country reviewed:</strong>
+                    <strong>Food created:</strong>
                     <br>
                   </p>
                 </div>

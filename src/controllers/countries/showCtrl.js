@@ -35,6 +35,7 @@ function showCtrl($state, $scope, $http, $location) {
       url: `/api/countries/${$scope.country._id}/comments`,
       data: $scope.comment
     }).then(result => {
+      console.log('this is result.data', result.data);
       $scope.country = result.data;
       $scope.comment.text = null;
     });

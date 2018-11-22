@@ -23,6 +23,12 @@ userSchema.virtual('comments', {
   foreignField: 'comments.commentAuthor'
 });
 
+// userSchema.virtual('comments', {
+//   ref: 'Country',
+//   localField: '_id',
+//   foreignField: 'comments.commentAuthor'
+// });
+
 
 
 

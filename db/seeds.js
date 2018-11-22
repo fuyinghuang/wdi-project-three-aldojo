@@ -65,43 +65,75 @@ const countryData = [
     name: 'Taiwan',
     region: 'Asia',
     flagUrl: 'https://restcountries.eu/data/twn.svg',
-    alpha3Code: 'TWN'
+    alpha3Code: 'TWN',
+    comments: [{
+      text: 'Is it a country???🧐',
+      commentAuthor: userIds[0]
+    }, {
+      text: 'I can\'t find on the map. Where is it?',
+      commentAuthor: userIds[1]
+    }]
   },
   {
     _id: countryIds[1],
     name: 'Argentina',
     region: 'Americas',
     flagUrl: 'https://restcountries.eu/data/arg.svg',
-
-    alpha3Code: 'ARG'
+    alpha3Code: 'ARG',
+    comments: [{
+      text: 'I think Lucia is form this country',
+      commentAuthor: userIds[2]
+    }, {
+      text: 'Huh.....who is Lucia?',
+      commentAuthor: userIds[5]
+    }]
 
   }, {
     _id: countryIds[2],
     name: 'United Kingdom',
     region: 'Europe',
     flagUrl: 'https://restcountries.eu/data/gbr.svg',
-    Alpha3Code: 'GBR'
+    alpha3Code: 'GBR',
+    comments: [{
+      text: 'Is it still in EU?',
+      commentAuthor: userIds[2]
+    }, {
+      text: 'Fish and chips country',
+      commentAuthor: userIds[1]
+    }]
   },
   {
     _id: countryIds[3],
     name: 'Spain',
     region: 'Europe',
     flagUrl: 'https://restcountries.eu/data/esp.svg',
-    Alpha3Code: 'ESP'
+    alpha3Code: 'ESP',
+    comments: [{
+      text: 'Rafa, are you there?',
+      commentAuthor: userIds[5]
+    }]
   },
   {
     _id: countryIds[4],
     name: 'Korea (Republic of)',
     region: 'Asia',
     flagUrl: 'https://restcountries.eu/data/kor.svg',
-    Alpha3Code: 'KOR'
+    alpha3Code: 'KOR',
+    comments: [{
+      text: 'Jumee, check your slack!',
+      commentAuthor: userIds[5]
+    }]
   },
   {
     _id: countryIds[5],
     name: 'Colombia',
     region: 'Americas',
     flagUrl: 'https://restcountries.eu/data/col.svg',
-    Alpha3Code: 'COL'
+    alpha3Code: 'COL',
+    comments: [{
+      text: 'Narcos or narchos?',
+      commentAuthor: userIds[1]
+    }]
 
   },
   {
@@ -109,14 +141,23 @@ const countryData = [
     name: 'Nigeria',
     region: 'Africa',
     flagUrl: 'https://restcountries.eu/data/ner.svg',
-    Alpha3Code: 'NGA'
+    alpha3Code: 'NGA',
+    comments: [{
+      text: 'Kedu!Femi',
+      commentAuthor: userIds[1]
+    }]
   },
   {
     _id: countryIds[7],
     name: 'German',
     region: 'Europe',
     flagUrl: 'https://restcountries.eu/data/geo.svg',
-    Alpha3Code: 'DEU'
+    alpha3Code: 'DEU',
+    comments: [{
+      text: 'Guten Tag, Anäis',
+      commentAuthor: userIds[5]
+    }]
+
 
   }
 
