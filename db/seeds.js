@@ -149,7 +149,7 @@ const countryData = [
   },
   {
     _id: countryIds[7],
-    name: 'German',
+    name: 'Germany',
     region: 'Europe',
     flagUrl: 'https://restcountries.eu/data/geo.svg',
     alpha3Code: 'DEU',
@@ -157,12 +157,7 @@ const countryData = [
       text: 'Guten Tag, Anäis',
       commentAuthor: userIds[5]
     }]
-
-
   }
-
-
-
 ];
 
 const foodData = [
