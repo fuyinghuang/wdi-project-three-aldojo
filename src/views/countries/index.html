@@ -1,20 +1,32 @@
-<h1>Country LIST! A.K.A. INDEX</h1>
-<section>
-  <form ng-submit="handleFilterSubmit()">
-  <input type="text" class="input" ng-model="searchTerm">
-  <button class="button">🔎</button>
-  </form>
-  <hr>
-  <div class="columns is-multiline">
-    <!-- Don't show every fish, just the filtered ones! -->
-    <div ng-repeat="country in filteredCountries" class="column is-4">
-      <a ui-sref="countriesShow({ id: country._id })">
-        <div class="card">
-          <div class="card-header">
-            {{ fish.name }}
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+<section class="hero is-small top">
+   <div class="hero-body">
+     <div class="container has-text-centered">
+       <!-- <label class="title is-4 searchbar" for="/">Search for a dishes:</label> -->
+       <input type="text" class="input is-rounded" placeholder="looking for a country..." ng-model="$parent.searchBar">
+     </div>
+   </div>
+ </section>
+
+
+ <section class="container">
+   <div class="columns is-mobile is-tablet is-multiline">
+     <div ng-repeat="country in countries | filter: searchBar" class="column is-4-desktop is-6-tablet is-12-mobile">
+       <div class="column">
+         <a ui-sref="countryShow({ alpha3Code: country.alpha3Code })">
+           <div id="masonry" class="card is-shady">
+             <div class="card-image">
+               <figure class="image is-3by2">
+                 <img ng-src="{{ country.flag }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
+               </figure>
+             </div>
+             <div class="card-content">
+               <div class="content has-text-centered">
+                 <h4>{{ country.name }} ({{ country.subregion }})</h4>
+               </div>
+             </div>
+           </div>
+         </a>
+       </div>
+     </div>
+   </div>
+ </section>

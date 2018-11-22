@@ -1,37 +1,77 @@
 const router = require('express').Router();
 const countryController = require('../controllers/countryController');
 const foodController = require('../controllers/foodController');
+const authController = require('../controllers/authController');
+const commentController = require('../controllers/commentController');
+const voteController = require('../controllers/voteController');
+const countryCommentController = require('../controllers/countryCommentController');
+const userController = require('../controllers/userController');
+const jwt = require('jsonwebtoken');
+
+function secureRoute(req, res, next) {
+  if (!req.headers.authorization)
+    res.status(401).json({ message: 'unauthorised'});
+  const token = req.headers.authorization.replace('Bearer ', '');
+  jwt.verify(token, 'doris', function(err) {
+    if(err){
+      res.status(401).json({ message: 'Unauthorised!' });
+    } else {
+      req.tokenUserId = jwt.decode(token).sub;
+      next();
+    }
+  });
+}
+
+router.route('/register')
+  .post(authController.registerRoute);
+
+router.route('/login')
+  .post(authController.loginRoute);
 
 router.route('/countries')
   .get(countryController.countryIndexRoute)
-  .post(countryController.countryCreateRoute);
+  .post(secureRoute, countryController.countryCreateRoute);
 
 router.route('/countries/:id')
-  .get(countryController.countryShowRoute);
+  .get(countryController.countryShowRoute)
+  .put(secureRoute, countryController.countryUpdateRoute)
+  .delete(secureRoute, countryController.countryDeleteRoute);
 
+router.route('/countries/alpha3/:alpha3Code')
+  .get(countryController.countryAlphaShowRoute);
 
 router.route('/countries/:countryId')
-  .post(foodController.foodCreateRoute);
-
+  .post(secureRoute, foodController.foodCreateRoute);
 
 router.route('/foods')
   .get(foodController.foodIndexRoute);
 
-
 router.route('/foods/:id')
-  .get(foodController.foodShowRoute);
-// .put(secureRoute, exhibitionController.updateRoute)
-// .delete(secureRoute, exhibitionController.deleteRoute);
+  .get(foodController.foodShowRoute)
+  .put(secureRoute, foodController.foodUpdateRoute)
+  .delete(secureRoute, foodController.foodDeleteRoute);
+
+router.route('/foods/:foodId/vote')
+  .post(secureRoute, voteController.vote);
+
+router.route('/foods/:foodId/unvote')
+  .post(secureRoute, voteController.unvote);
+
+router.route('/foods/:foodId/comments')
+  .post(secureRoute, commentController.createRoute);
+
+router.route('/foods/:foodId/comments/:commentId')
+  .delete(secureRoute, commentController.deleteRoute);
+
+router.route('/countries/:countryId/comments')
+  .post(secureRoute, countryCommentController.createRoute);
 
 
+router.route('/countries/:countryId/comments/:commentId')
+  .delete(secureRoute, countryCommentController.deleteRoute);
 
-
-
-// router.route('/register')
-//   .post(authController.register);
-//
-// router.route('/login')
-//   .post(authController.login);
+router.route('/users/:id')
+  .get(userController.showProfile);
 
 
 module.exports = router;

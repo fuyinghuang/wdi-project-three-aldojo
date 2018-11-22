@@ -1,0 +1,122 @@
+<!-- <div class="column is-4 is-offset-2">
+  <div class="field">
+    <h3 class="subtitle is-3"><label id="reviewed" class="label">Have reviewed...</label></h3>
+    <div ng-repeat="comment in commentAuthor.comments">
+      <a ui-sref="foodShow({ id: comment.id })">
+        <span><h3>{{ comment.user.commentAuthor }}</h3></span>
+        <span><p>{{ comment.name }}</p></span>
+      </a>
+    </div>
+  </div>
+</div> -->
+
+
+
+<section id="profile"class="hero is-fullheight  is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1 has-text-right user">
+        Jonrney of
+      </h1>
+      <h2 class="title is-2 has-text-right user">
+        {{ username }}
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-heading">
+    <h3 class="title is-3 indieflower">About Me</h3>
+    <h4 class="subtitle is-5 indieflower">Travel, food and ❤️❤️❤️</h4>
+    <div class="container">
+      <p class="indieflower">I believe in traveling, which is kinda the attitude of life. I love traveling, trying diffenet food, meeting different people...Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+    </div>
+  </div>
+
+  <div class="columns has-same-height is-gapless about">
+    <div class="column is-6">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-3by2">
+            <img src="https://source.unsplash.com/random/1280x960" alt="Placeholder image">
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="column is-6 ">
+      <div class="card">
+        <div class="card-content skills-content">
+          <h3 class="title is-4 has-text-centered"> <strong>Profile </strong></h3>
+          <hr />
+          <div class="content">
+            <div class="columns is-mobile">
+              <div class="column is-6 is-offset-1">
+                <article class="media">
+                  <div class="media-content">
+                    <div class="content">
+                      <p>
+                        <strong>Food reviewed:</strong>
+                        <br>
+                      </p>
+                      <div ng-repeat="comment in commentAuthor.foodComments">
+                        <a ui-sref="foodShow({ id: comment.id })">
+                          <p>{{ comment.name }}</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+          </div>
+          <div class="column is-6 is-multiline">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Country reviewed:</strong>
+                    <br>
+                  </p>
+                  <div>
+                    <div id="level" ng-repeat="comment in commentAuthor.countryComments">
+                      <a ui-sref="countryShow({ alpha3Code: comment.alpha3Code })">
+                        <p>{{ comment.name }}</p>
+                        <br />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="columns is-mobile ">
+          <div class="column is-6 is-offset-1">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Food created:</strong>
+                    <br>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="column is-6 ">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>Counrey added </strong>
+                      <br>
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

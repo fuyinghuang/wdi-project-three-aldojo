@@ -14,10 +14,17 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.1",
+    "angular-flash-alert": "^2.5.0",
+    "bcrypt": "^3.0.2",
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "bulma": "^0.7.2",
     "express": "^4.16.3",
-    "mongoose": "^5.3.12"
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.12",
+    "morgan": "^1.9.1",
+    "satellizer": "^0.15.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

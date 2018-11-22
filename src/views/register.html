@@ -1,0 +1,38 @@
+<section class="auth" class="hero is-fullheight">
+   <div class="hero-body">
+     <div class="container has-text-centered">
+       <div class="column is-4 is-offset-4">
+         <h3 class="title has-text-white">Register</h3>
+         <p class="subtitle has-text-white">Register to travel</p>
+         <div class="box">
+           <form ng-submit="handleRegister()">
+             <div class="field">
+               <div class="control">
+                 <input class="input " name="username" ng-model="user.username" placeholder="Username" >
+               </div>
+             </div>
+             <div class="field">
+               <div class="control">
+                 <input class="input" name="email" ng-model="user.email"  placeholder="Your Email" >
+               </div>
+             </div>
+
+             <div class="field">
+               <div class="control">
+                 <input class="input" name="password" ng-model="user.password" type="password" placeholder="Your Password">
+               </div>
+             </div>
+             <div class="field">
+               <label class="checkbox">
+                 <input type="checkbox">
+                 Remember me
+               </label>
+             </div>
+             <button class="button is-primary">Register</button>
+           </form>
+         </div>
+
+     </div>
+   </div>
+ </div>
+ </section>
