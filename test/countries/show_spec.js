@@ -122,52 +122,43 @@ const countryData = [
   }
 ];
 
-describe('Countries INDEX', () => {
+let countryId;
+
+describe('Country SHOW', () => {
 
   beforeEach(done => {
     Country.remove({})
       .then(() => Country.create(countryData))
-      .then(() => done());
+      .then(() => {
+        countryId = countryIds[1];
+        done();
+      });
   });
 
   it('should return a 200 response', done => {
-    api.get('/api/countries')
+    api.get(`/api/countries/${countryId}`)
       .end((err, res) => {
         expect(res.status).to.eq(200);
         done();
       });
   });
 
-  it('should return an array', done => {
-    api.get('/api/countries')
+  it('should return an object', done => {
+    api.get(`/api/countries/${countryId}`)
       .end((err, res) => {
         // res.body is the result you would see in Insomnia
-        expect(res.body).to.be.an('array');
-        done();
-      });
-  });
-
-  it('should return an array of objects', done => {
-    api.get('/api/countries')
-      .end((err, res) => {
-        // use res.body.forEach
-        res.body.forEach(country => expect(country).to.be.an('object'));
+        expect(res.body).to.be.an('object');
         done();
       });
   });
 
   it('should return the correct data', done => {
-    api.get('/api/countries')
+    api.get(`/api/countries/${countryId}`)
       .end((err, res) => {
-        res.body.forEach(country => {
-          const dataItem = countryData.find(item => item.name === country.name);
-          expect(country.name).to.eq(dataItem.name);
-          expect(country.region).to.eq(dataItem.region);
-          expect(country.flagUrl).to.eq(dataItem.flagUrl);
-          expect(country.alpha3Code).to.eq(dataItem.alpha3Code);
-          expect(country.comments[0].commentAuthor).to.eq(dataItem.comments[0].commentAuthor);
-          expect(country.comments[0].text).to.eq(dataItem.comments[0].text);
-        });
+        expect(res.body.name).to.eq(countryData[1].name);
+        expect(res.body.region).to.eq(countryData[1].region);
+        expect(res.body.alpha3Code).to.eq(countryData[1].alpha3Code);
+        expect(res.body.flagUrl).to.eq(countryData[1].flagUrl);
         done();
       });
   });
