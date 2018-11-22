@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
   <nav class="bar" class="navbar">
@@ -16,16 +17,16 @@
       <div class="navbar-item has-dropdown is-hoverable">
         <a id="link" class="navbar-link"></a>
         <!-- <a  class="navbar" ><i id="earth"style="font-size:30px;" class="fas fa-globe-americas"></i></a> -->
-        <div class="navbar-dropdown" >
+        <div class="navbar-dropdown index" >
         <!-- <div class="navbar" > -->
           <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
-          <a class="navbar-item" ui-sref="countryIndex">Countries</a>
-          <a class="navbar-item" ui-sref="foodIndex">Food</a>
+          <a class="navbar-item" ui-sref="countryIndex">COUNTRIES</a>
+          <a class="navbar-item" ui-sref="foodIndex">FOOD</a>
           <!-- <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a> -->
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">Profile</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
-          <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">Log in</a>
+          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">PROFILE</a>
+          <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">LOG OUT {{ username }}</a>
+          <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">REGISTER</a>
+          <a ng-if="!isAuthenticated()" class="navbar-item"  ui-sref="login">LOG IN</a>
         </div>
       </div>
     </div>
