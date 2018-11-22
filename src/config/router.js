@@ -1,5 +1,6 @@
 import countriesIndexCtrl from '../controllers/countries/indexCtrl';
 import countriesShowCtrl from '../controllers/countries/showCtrl';
+// import countriesAlphaCtrl from '../controllers/countries/alphaCtrl';
 import countriesNewCtrl from '../controllers/countries/newCtrl';
 import countriesEditCtrl from '../controllers/countries/editCtrl';
 import registerCtrl from '../controllers/registerCtrl';
@@ -38,15 +39,14 @@ function Router($urlRouterProvider, $stateProvider) {
       templateUrl: './views/countries/index.html',
       url: '/countries',
       controller: countriesIndexCtrl
-    })
-    .state('countryShow', {
+    }).state('countryShow', {
       templateUrl: './views/countries/show.html',
-      url: '/countries/:id',
+      url: '/countries/:alpha3Code',
       controller: countriesShowCtrl
     })
     .state('countryNew', {
-      url: '/countries/new',
       templateUrl: './views/countries/new.html',
+      url: '/countries/new/:alpha3Code',
       controller: countriesNewCtrl,
       resolve: { secureRoute }
     })

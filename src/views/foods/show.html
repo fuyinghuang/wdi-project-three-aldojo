@@ -1,6 +1,39 @@
-<h1 class="title is-1 has-text-centered"> {{ food.name }} </h1>
+<section class="hero is-fullheight is-default is-bold">
+<div class="hero-body">
+  <div class="container has-text-centered">
+    <div class="columns is-vcentered">
+      <div class="column is-5">
+        <figure class="image is-4by3">
+          <img src="{{ food.image }}" alt="Description">
+        </figure>
+      </div>
+      <div class="column is-6 is-offset-1">
+        <h1 class="title is-2">
+          {{ food.name }}
+        </h1>
+        <h2 class="subtitle is-4">
+
+        </h2>
+        <br>
+        <p class="has-text-centered">
+            {{food.description}}
+          <!-- <a class="button is-medium is-info is-outlined">
+            Learn more
+          </a> -->
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- <h1 class="title is-1 has-text-centered"> {{ food.name }} </h1>
 <img src="{{ food.image }}">
-<p>{{food.description}}</p>
+<p>{{food.description}}</p> -->
+
+
+
 <button ui-sref="foodEdit({ id: food._id })">Edit</button>
 <button ng-click="handleDelete()">DELETE</button>
 
@@ -15,8 +48,8 @@
       <div class="hero-body">
         <!-- <div ng-if="isAuthenticated()"ng-repeat="comment in food.comments"> -->
         <div ng-repeat="comment in food.comments">
-          <span><h3>{{ comment.commentAuthor.username }}</h3></span>
-          <span><p>{{ comment.text }}</p></span>
+          <h3>{{ comment.commentAuthor.username }}</h3>
+          <p>{{ comment.text }}</p>
           <!-- <button ng-if="isAuthenticated()" ng-if="comment.user._id === userId" class="button is-dark" ng-click="deleteComment(comment)">x</button> -->
           <button ng-click="deleteComment(comment)">x</button>
         </div>

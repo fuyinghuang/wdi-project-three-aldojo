@@ -37,6 +37,9 @@ router.route('/countries/:id')
   .put(secureRoute, countryController.countryUpdateRoute)
   .delete(secureRoute, countryController.countryDeleteRoute);
 
+router.route('/countries/alpha3/:alpha3Code')
+  .get(countryController.countryAlphaShowRoute);
+
 router.route('/countries/:countryId')
   .post(secureRoute, foodController.foodCreateRoute);
 
@@ -65,7 +68,7 @@ router.route('/countries/:countryId/comments')
 
 
 router.route('/countries/:countryId/comments/:commentId')
-  .delete(countryCommentController.deleteRoute);
+  .delete(secureRoute, countryCommentController.deleteRoute);
 
 router.route('/users/:id')
   .get(userController.showProfile);
