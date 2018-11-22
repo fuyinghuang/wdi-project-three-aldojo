@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html ng-app='Aldojo'>
-  <head>
-    <meta charset="utf-8">
-    <title>ALDOJO!</title>
-    <link rel="shortcut icon" href="./style/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  </head>
-  <body ng-controller="mainCtrl">
+<head>
+  <meta charset="utf-8">
+  <title>ALDOJO!</title>
+  <link rel="shortcut icon" href="./style/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body ng-controller="mainCtrl">
   <nav class="bar" class="navbar">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
         <a id="link" class="navbar-link"></a>
         <!-- <a  class="navbar" ><i id="earth"style="font-size:30px;" class="fas fa-globe-americas"></i></a> -->
         <div class="navbar-dropdown" >
-        <!-- <div class="navbar" > -->
+          <!-- <div class="navbar" > -->
           <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
           <!-- <a class="navbar-item" ui-sref="home">Home</a> -->
           <a class="navbar-item" ui-sref="countryIndex">Countries</a>
@@ -30,8 +30,10 @@
     </div>
   </nav>
   <flash-message></flash-message>
-    <div ui-view></div>
-  </body>
 
+  <div ui-view></div>
+
+
+</body>
 
 </html>
