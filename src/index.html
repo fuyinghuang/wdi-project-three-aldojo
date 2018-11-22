@@ -21,24 +21,24 @@
               <img src="./style/favicon.ico" alt="Logo">
             </figure>
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"  data-target="navMenu">
+            <span class="burger-color" aria-hidden="true"></span>
+            <span class="burger-color" aria-hidden="true"></span>
+            <span class="burger-color" aria-hidden="true"></span>
           </a>
         </div>
-        <div class="navbar-menu">
+        <div class="navbar-menu dropdown">
           <div class="navbar-end">
             <!-- <a class="navbar-item is-active  ui-sref="home">">
             <i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO
           </a> -->
-          <a class="navbar-item is-active" ui-sref="countryIndex">
+          <a ui-sref-active="is-active" class="navbar-item " ui-sref="countryIndex">
             COUNTRIES
           </a>
-          <a class="navbar-item is-active" ui-sref="foodIndex">
+          <a ui-sref-active="is-active" class="navbar-item " ui-sref="foodIndex">
             FOOD
           </a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">
+          <a ui-sref-active="is-active" ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">
             PROFILE
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
@@ -46,17 +46,17 @@
               ACCOUNT
             </a>
             <div class="navbar-dropdown">
-              <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">
+              <a ui-sref-active="is-active" ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">
                 LOG OUT {{ username }}
               </a>
-              <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">
+              <a ui-sref-active="is-active" ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">
                 REGISTER
               </a>
-              <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">
+              <a ui-sref-active="is-active" ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">
                 LOG IN
               </a>
               <hr class="navbar-divider">
-              <div class="navbar-item">
+              <div ui-sref-active="is-active" class="navbar-item">
                 COMING SOON
               </div>
             </div>
@@ -65,6 +65,22 @@
       </div>
     </div>
   </nav>
+
+<script type="text/javascript">
+  const burger = document.getElementsByClassName('navbar-burger')[0];
+  const dropdown = document.getElementsByClassName('dropdown')[0];
+  const options = document.getElementsByClassName('navbar-item');
+  ToggleDropdown = function() {
+    burger.classList.toggle("is-active");
+    dropdown.classList.toggle("is-active")
+  }
+  burger.addEventListener('click', ToggleDropdown);
+  for (let i=0; i < options.length; i++ ) {
+    options[i].addEventListener('click', ToggleDropdown)
+  }
+</script>
+
+
   <flash-message></flash-message>
     <div ui-view></div>
   </body>

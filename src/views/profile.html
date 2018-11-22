@@ -55,9 +55,9 @@
                     <strong>Food reviewed:</strong>
                     <br>
                   </p>
-                  <div ng-repeat="comment in commentAuthor.comments">
+                  <div ng-repeat="comment in commentAuthor.foodComments">
                     <a ui-sref="foodShow({ id: comment.id })">
-                      <!-- <span><h3>{{ comment.user.commentAuthor }}</h3></span> -->
+                      <span><h3>{{ comment.user.commentAuthor }}</h3></span>
                       <p>{{ comment.name }}</p>
                     </a>
                   </div>
@@ -71,10 +71,9 @@
                     <strong>Country reviewed:</strong>
                     <br>
                   </p>
-                  <div ng-repeat="comment in commentAuthor.comments">
-                    <a ui-sref="countryShow({ id: comment.id })">
-                      <p>{{ comments.name }}</p>
-                      <p>{{ name }}</p>
+                  <div ng-repeat="comment in commentAuthor.countryComments">
+                    <a ui-sref="countryShow({ alpha3Code: comment.alpha3Code })">
+                      <p>{{ comment.name }}</p>
                     </a>
                   </div>
                 </div>
