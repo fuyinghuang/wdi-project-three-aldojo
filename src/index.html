@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
   </head>
   <body ng-controller="mainCtrl">
   <nav class="bar" class="navbar">
@@ -17,10 +19,9 @@
         <div class="navbar-dropdown" >
         <!-- <div class="navbar" > -->
           <a class="navbar-item" ui-sref="home"><i id="earth"style="font-size:20px;" class="fas fa-globe-americas"></i> | ALDOJO</a>
-          <!-- <a class="navbar-item" ui-sref="home">Home</a> -->
           <a class="navbar-item" ui-sref="countryIndex">Countries</a>
           <a class="navbar-item" ui-sref="foodIndex">Food</a>
-          <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a>
+          <!-- <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="countryNew">Add a Country</a> -->
           <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profile({id:userId})">Profile</a>
           <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log out {{ username }}</a>
           <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
