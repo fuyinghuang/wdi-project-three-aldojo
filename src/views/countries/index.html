@@ -9,14 +9,14 @@
 
 
 
-<div class="resultsContainer" ng-repeat="place in searchResults | limitTo : 3">
+<div class="resultsContainer" ng-repeat="place in searchResults | limitTo : 4">
   <div>
-    <a ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+    <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
       <p>{{ place.name }}</p>
     </a>
   </div>
   <div>
-    <a ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+    <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
       <img width="100px" src="{{ place.flag }}" alt="">
     </a>
   </div>
