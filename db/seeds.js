@@ -299,6 +299,27 @@ const foodData = [
     description: 'Empanada (Spanish pronunciation: [empaˈnaða]) is a type of pastry baked or fried in many countries of the Americas and in Spain. The name comes from the Spanish verb empanar, and literally translates as "enbreaded", that is, wrapped or coated in bread. Empanadas are made by folding dough over a stuffing, which may consist of meat, cheese, corn, or other ingredients',
     image: 'https://images.ricardocuisine.com/services/recipes/1074x1074_7700-1508419631.jpg',
     country: countryIds[5]
+  },{
+    name: 'Moin Moin',
+    description: 'Moimoi or Moin-Moin is a Nigerian steamed bean pudding made from a mixture of washed and peeled black-eyed peas, onions and fresh ground peppers (usually a combination of bell peppers and chili or Scotch bonnet). It is a protein-rich food that is a staple in Nigeria. Some adaptations also put apples in Moin-Moin.',
+    image: 'https://i-h2.pinimg.com/564x/6a/a9/6a/6aa96aea0a2fa6aa411c890d7e476eae.jpg',
+    country: countryIds[6],
+    comments: [{
+      text: 'Not too sure about these',
+      commentAuthor: userIds[2]
+    }, {
+      text: '??????',
+      commentAuthor: userIds[1]
+    }]
+  },{
+    name: 'Jollof Rice',
+    description: 'Jollof rice /ˈdʒɒləf/ or just jollof, also called Benachin (Wolof: "one pot"), is a one-pot rice dish popular in many West African countries',
+    image: 'https://i-h2.pinimg.com/564x/0b/a8/e3/0ba8e30a694687d416bc4e50b4335de2.jpg',
+    country: countryIds[6],
+    comments: [{
+      text: 'nice nice nice nice nice nice!!!',
+      commentAuthor: userIds[1]
+    }]
   }
 
 
@@ -308,17 +329,6 @@ const foodData = [
 Country.collection.drop();
 Food.collection.drop();
 User.collection.drop();
-// User.collection.drop();
-
-// Country.create(countryData)
-//   .then(result => {
-//     console.log(`Created ${result.length} countries!`);
-//   };
-// Food.create(foodData)
-//   .then(result => {
-//         console.log(`Created ${result.length} foods!`);
-//     mongoose.connection.close();
-//   });
 
 
 
