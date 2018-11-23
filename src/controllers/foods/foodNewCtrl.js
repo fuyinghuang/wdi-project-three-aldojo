@@ -5,7 +5,7 @@ function foodNewCtrl($scope, $http, $state){
       url: `/api/countries/${$state.params.id}`,
       data: $scope.food
     // }).then(() => $state.go('countryIndex'));
-    }).then(result => $state.go('countryShow', {id: result.data._id}));
+  }).then(result => $state.go('countryShow', {id: $state.params.id}));
   };
 }
 

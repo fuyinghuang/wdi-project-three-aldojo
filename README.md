@@ -71,6 +71,8 @@
 
 ### Brief
 
+Your instructors will partner you with other classmates to design and collaboratively build a MEAN stack app of your own design
+
 ### Featured Piece of Code
 
 ```

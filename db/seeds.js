@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 const environment = require('../config/environment');
 const Country = require('../models/country');
 const User = require('../models/user');
-
 const Food = require('../models/food');
-// const User = require('../models/user');
+
 
 mongoose.connect(environment.dbUri);
 
@@ -140,7 +139,7 @@ const countryData = [
     _id: countryIds[6],
     name: 'Nigeria',
     region: 'Africa',
-    flagUrl: 'https://restcountries.eu/data/ner.svg',
+    flagUrl: 'https://restcountries.eu/data/nga.svg',
     alpha3Code: 'NGA',
     comments: [{
       text: 'Kedu!Femi',
@@ -258,12 +257,20 @@ const foodData = [
     description: 'Milanesa is a South American variation of an Italian dish where generic types of breaded meat fillet preparations are known as a milanesa. The milanesa was brought to the Southern Cone by Italian immigrants during the mass emigration called the Italian diaspora between 1860-1920s. Its name probably reflects an original Milanese preparation, cotoletta alla Milanese, which is similar to the Austrian Wiener Schnitzel. A milanesa consists of a thin slice of beef, chicken, veal, or sometimes pork, eggplants, tempeh or soy. Each slice is dipped into beaten eggs, seasoned with salt, and other condiments according to the taste of the cook (like parsley and garlic). Each slice is then dipped in bread crumbs (or occasionally flour) and shallow-fried in oil, one at a time.',
     image: 'https://restorando-res.cloudinary.com/image/upload/c_fit,f_auto,h_500,w_700/v1/restaurant_photos/b//13443/127946/restaurante_el-club-de-la-milanesa-barrio-jardin_barrio-jardin_restaurante_el-club-de-la-milanesa-lomas-de-san-isidro_zona-norte_4_guacamole.jpg',
     country: countryIds[1],
+    comments: [{
+      text: 'nice nice nice nice nice nice!!!',
+      commentAuthor: userIds[1]
+    }],
     votes: []
   },{
     name: 'Paella',
     description: 'Paella (Valencian pronunciation: [paˈeʎa]; Spanish: [paˈeʎa]) is a Valencian rice dish that has ancient roots but its modern form originated in the mid-19th century in the area around Albufera lagoon on the east coast of Spain adjacent to the city of Valencia. Many non-Spaniards view paella as Spain\'s national dish, but most Spaniards consider it to be a regional Valencian dish. Valencians, in turn, regard paella as one of their identifying symbols. Types of paella include Valencian paella, vegetable paella (Spanish: paella de verduras), seafood paella (Spanish: paella de mariscos), and mixed paella (Spanish: paella mixta), among many others.',
     image: 'https://i-h2.pinimg.com/564x/b3/a5/13/b3a51354c6d5d08d24b89e7d4e9762da.jpg',
     country: countryIds[3],
+    comments: [{
+      text: 'nice nice nice nice nice nice!!!',
+      commentAuthor: userIds[1]
+    }],
     votes: []
   },{
     name: 'Tortilla de patatas',
@@ -281,7 +288,14 @@ const foodData = [
     name: 'Croquetas',
     description: 'Croquette(/kroʊˈket/) is a small breadcrumbed fried food roll containing, usually as main ingredients, ground meat (veal, beef, chicken, or turkey), shellfish, fish, ham, cheese, mashed potatoes or vegetables, and mixed with béchamel or brown sauce, and soaked white bread, egg, onion, spices and herbs, wine, milk, beer, or some combination, sometimes with a filling, e.g. sautéed onions, mushrooms, or boiled eggs. The croquette is usually shaped into a cylinder, disk, or oval shape, and then deep-fried. The croquette (from the French croquer, "to crunch") gained worldwide popularity, both as a delicacy and as a fast food. Mashed potato-filled croquettes are often served as a side dish in winter holiday meals, such as Christmas. In fast food cuisine, varieties exist without potatoes, but with cheese, beef, or goulash, often in a filling based on béchamel sauce',
     image: 'https://i-h2.pinimg.com/564x/8f/75/4b/8f754b510ead1501e0e09a9aa9a22a70.jpg',
-    country: countryIds[3]
+    country: countryIds[3],
+    comments: [{
+      text: 'Not too sure about these',
+      commentAuthor: userIds[1]
+    }, {
+      text: 'I did not like',
+      commentAuthor: userIds[2]
+    }]
   },{
     name: 'Pa-Jeon',
     description: 'Korean pancake.Pajeon (파전, Korean pronunciation: [pʰa.dʑʌn]) is a variety of jeon with scallion as its prominent ingredient, as pa (파) means scallion. It is a Korean dish made from a batter of eggs, wheat flour, rice flour, scallions, and often other ingredients depending on the variety. Beef, pork, kimchi, shellfish, and other seafood are mostly used. If one of these ingredients, such as squid, dominates the jeon, the name will reflect that; ojing\'eo jeon (오징어전) is \'squid jeon.',
@@ -311,7 +325,14 @@ const foodData = [
     name: 'Korean BBQ',
     description: 'Charcoal grill barbecue wrap with sliced garlic and Ssam-jang sauce and wrap with lettuce leaves..',
     image: 'https://cdn.vox-cdn.com/thumbor/X_G39Z0yj-O31EIBuC_7NCpJBQc=/0x0:1054x1064/1200x800/filters:focal(443x448:611x616)/cdn.vox-cdn.com/uploads/chorus_image/image/57791279/Screen_Shot_2016-02-23_at_10.04.03_AM.0.0.png',
-    country: countryIds[4]
+    country: countryIds[4],
+    comments: [{
+      text: 'Not too sure',
+      commentAuthor: userIds[2]
+    }, {
+      text: 'Hmmmmmmm.....',
+      commentAuthor: userIds[1]
+    }]
   },
   {
     name: 'Arepa',
@@ -329,12 +350,26 @@ const foodData = [
     name: 'Minced Pork Rice',
     description: 'Minced pork rice (Chinese: 滷肉飯; pinyin: lǔròufàn; Pe̍h-ōe-jī: ló͘-bah-pn̄g) is a Chinese rice dish that is commonly seen throughout Taiwan and Southern Fujian[1]. The flavor may vary from one region to another, but the basic ingredients remain the same: ground pork marinated and boiled in soy sauce served on top of steamed rice.',
     image: 'https://www.tony60533.com/wp-content/uploads/pixnet/1445179278-140725104.jpg?v=1445179283',
-    country: countryIds[0]
+    country: countryIds[0],
+    comments: [{
+      text: 'Rics is the beat',
+      commentAuthor: userIds[2]
+    }, {
+      text: 'Did not like😞',
+      commentAuthor: userIds[0]
+    }]
   },{
     name: 'Empanada',
     description: 'Empanada (Spanish pronunciation: [empaˈnaða]) is a type of pastry baked or fried in many countries of the Americas and in Spain. The name comes from the Spanish verb empanar, and literally translates as "enbreaded", that is, wrapped or coated in bread. Empanadas are made by folding dough over a stuffing, which may consist of meat, cheese, corn, or other ingredients',
     image: 'https://images.ricardocuisine.com/services/recipes/1074x1074_7700-1508419631.jpg',
-    country: countryIds[5]
+    country: countryIds[5],
+    omments: [{
+      text: 'nice nice nice nice nice',
+      commentAuthor: userIds[1]
+    }, {
+      text: 'Interesting',
+      commentAuthor: userIds[2]
+    }]
   },{
     name: 'Moin Moin',
     description: 'Moimoi or Moin-Moin is a Nigerian steamed bean pudding made from a mixture of washed and peeled black-eyed peas, onions and fresh ground peppers (usually a combination of bell peppers and chili or Scotch bonnet). It is a protein-rich food that is a staple in Nigeria. Some adaptations also put apples in Moin-Moin.',

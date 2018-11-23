@@ -21,8 +21,4 @@ function indexCtrl($state, $scope, $http) {
 
 
 
-
-
-
-
 export default indexCtrl;
