@@ -1,58 +1,47 @@
-<div class="hero-body">
-  <div class="container has-text-centered">
-    <div class="columns is-vcentered">
-      <div class="column is-5 columns">
-        <div class="column is-5 ">
-          <figure class="image is-4by3">
-            <img src="{{ country.flagUrl }}">
-          </figure>
-        </div>
-        <div class="column is-6 ">
-          <h1 class="title is-1" style="margin:auto;">{{ country.name }}</h1>
-          <br />
-          <h2 class=" subtitle is-4">Region: {{ country.region }}</h2>
-        </div>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <figure class="image is-5by4">
+<div class="container top">
+  <div class="columns">
+    <div class="columns column is-6 is-multiline" style="flex-direction:column;">
+      <div style="display:flex;align-items: center;"class="columns column is-12 is-multiline">
+        <figure class="column is-4 image">
           <img src="{{ country.flagUrl }}">
         </figure>
-      </p>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<div class="hero-body">
-  <div class="container has-text-centered">
-    <div class="columns is-vcentered">
-      <div class="column is-5 ">
-        <h1 class="title is-3 has-text-centered">
-          The Most Popular Food in {{ country.name }}
-        </h1>
-        <br>
-        <div class="columns table is-multiline is-12">
-          <h1 class="column has-text-weight-bold has-text-left is-8">Name</h1>
-          <h1 class="column has-text-weight-bold has-text-centered is-4">Votes</h1>
-          <div class="column is-12" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
-            <a class="columns" ui-sref="foodShow({ id: food._id })">
-              <p class="column is-8 has-text-left">{{ food.name }}</p>
-              <p class="column is-4 has-text-centered">{{ food.voteNum }}</p>
-            </a>
-          </div>
-        </div>
-        <div class="column is-centered is-12">
-          <button class="button has-text-weight-bold  is-medium is-primary is-outlined" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">
-            <p class="has-text-centered">
-              Add A New Dish
-            </p>
-          </button>
+        <div class="column is-8 columns is-multiline">
+          <h1 class="column title is-12 is-1" style="margin:auto;">{{ country.name }}</h1>
+          <h2 class="column subtitle is-12">Region: {{ country.region }}</h2>
         </div>
       </div>
+      <h1 class="column title is-12 has-text-centered">
+        The Most Popular Food in {{ country.name }}
+      </h1>
+      <div class="columns is-multiline is-12">
+        <h1 class="column has-text-weight-bold has-text-left is-8">Name</h1>
+        <h1 class="column has-text-weight-bold has-text-centered is-4">Votes</h1>
+        <div class="column is-12" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
+          <a class="columns" ui-sref="foodShow({ id: food._id })">
+            <p class="column is-8 has-text-left">{{ food.name }}</p>
+            <p class="column is-4 has-text-centered">{{ food.voteNum }}</p>
+          </a>
+        </div>
+      </div>
+      <div class="column is-centered is-12">
+        <button class="button has-text-weight-bold  is-medium is-primary is-outlined" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">
+          <p class="has-text-centered">
+            Add A New Dish
+          </p>
+        </button>
+      </div>
 
-
-      <div class="column is-5 is-offset-1">
+    </div>
+    <div class="columns column is-6 is-multiline is-centered">
+        <div style="display:contents;" class="container has-text-centered is-centered">
+            <div class="column is-8 is-centered">
+              <figure class="image is-6">
+                <img src="{{ country.nationalFood[0].image }}">
+                <p>{{ country.nationalFood[0].name }}</p>
+              </figure>
+          </div>
+      </div>
+      <div class="column is-5">
         <h4 class="title is-3 has-text-centered">Discussion</h4>
         <div class="card is-shady">
           <div class="card-image">
@@ -77,18 +66,19 @@
               </div>
             </div>
             <!-- <form  ng-if="isAuthenticated()" ng-submit="addComment()"> -->
-            <form ng-submit="addComment()">
-              <!-- <label for='comment'>Something to share.. </label> -->
-              <textarea class="textarea is-medium" name="comment" ng-model="comment.text"></textarea>
-              <button class="button has-text-weight-bold  is-medium is-dark is-outlined">
-                <p class="has-text-centered">
-                  Add A Comment
-                </p>
-              </button>
-            </form>
+              <form ng-submit="addComment()">
+                <!-- <label for='comment'>Something to share.. </label> -->
+                <textarea class="textarea is-medium" name="comment" ng-model="comment.text"></textarea>
+                <button class="button has-text-weight-bold  is-medium is-dark is-outlined">
+                  <p class="has-text-centered">
+                    Add A Comment
+                  </p>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
+
+</div>
