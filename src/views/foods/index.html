@@ -1,18 +1,6 @@
-<!-- <section>
-  <input type="text" class="input is-rounded" ng-model="$parent.searchBar">
-  <label class="title is-4 searchbar" for="/">Search for a dishes:</label>
-  <div ng-repeat="food in foods | filter: searchBar" class="column is-4">
-    <a ui-sref="foodShow({ id: food._id })">
-      <p>{{ food.name }}</p>
-      <img ng-src="{{ food.image }}">
-    </a>
-  </div>
-</section> -->
-
 <section class="hero is-small top">
    <div class="hero-body">
      <div class="container has-text-centered">
-       <!-- <label class="title is-4 searchbar" for="/">Search for a dishes:</label> -->
        <input type="text" class="input is-rounded" placeholder="looking for food..." ng-model="$parent.searchBar">
      </div>
    </div>

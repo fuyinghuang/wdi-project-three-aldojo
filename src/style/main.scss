@@ -4,8 +4,6 @@
 @import "components/img";
 @import "pages/home";
 @import "pages/auth";
-
-
 @import "pages/profile";
 .top{
   margin-top: 10vh;
@@ -22,7 +20,6 @@
   color: white;
   font-size: 20px;
 }
-
 
 .resultsContainer {
   display: flex;
@@ -43,6 +40,7 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  // background-image: url("./style/earth.gif");
   background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-Vg6Oxx/earth-zoom-out-to-space-satellites-and-moon-orbiting-around-the-earth-4k_vy8x2lrhx__F0006.png);
   background-size: cover;
   h1 {
@@ -52,8 +50,6 @@
     padding-top: 20px;
   }
 }
-
-
 
 
 
