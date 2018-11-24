@@ -43,3 +43,13 @@ $button-colour: #00d4b185;
   height: 37vh;
   overflow: auto;
 }
+
+
+div#nationalFood  {
+  transition: 0.8s opacity;
+  padding: 7px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.1;
+  }
+}

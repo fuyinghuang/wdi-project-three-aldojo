@@ -39,7 +39,7 @@
             <div class="column is-12-desktop is-12-tablet is-12-mobile">
               <div class="column is-mobile">
                 <div class="card is-shady votefood" >
-                  <div ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
+                  <div id="nationalFood" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
                     <a class="card-image is-mobile is-tablet vote" ui-sref="foodShow({ id: food._id })">
                       <figure class="image is-4by3 ">
                         <img src="{{ food.image }}">
@@ -63,7 +63,6 @@
 
 
 
-
 <section class="hero is-small top">
   <div class="hero-body">
     <div class="container">
@@ -77,14 +76,15 @@
                   <hr>
                 </div>
               </div>
+
               <div ng-repeat="comment in country.comments">
                 <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
                 <span>{{ comment.text }}</span>
                 <button ng-if="isAuthenticated()" ng-if="comment.commentAuthor._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
                 <hr>
               </div>
-              <form ng-if="isAuthenticated()" class="is-grouped" ng-submit="addComment()">
-                <input type="text" class="input" ng-model="comment.text">
+              <form class="is-grouped"  ng-submit="addComment()">
+                <input type="text" class="input" name="comment" ng-model="comment.text">
                 <button class="button is-centered btn">Comment</button>
               </form>
             </div>

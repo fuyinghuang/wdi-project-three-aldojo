@@ -1,3 +1,120 @@
+
+
+
+
+
+
+
+
+
+
+<div class="columns show">
+
+  <div class="column is-4 left">
+    <div class="column is-desktop">
+      <h1 class="title is-2 has-text-centered"><span id="blue" >{{exhibition.name}}</span></h1>
+
+<!-- if bookmarked array includes your id, you can remove it -->
+      <div ng-if="exhibition.bookmarked.includes(userId)" id="bookmark-icon">
+        <button class="button" ng-click="removeBookmark()"><i class="fas fa-bookmark"></i></button>
+      </div>
+<!-- if your id isnt in the bookmarked array of this exhibition, you can bookmark it -->
+      <div ng-if="!exhibition.bookmarked.includes(userId)" id="bookmark-icon">
+        <button class="button" ng-click="bookmarkExhibition()"><i class="far fa-bookmark"></i></button>
+      </div>
+
+      <p class="has-text-centered" >Until {{exhibition.dates}}</p>
+      <a ui-sref="galleryShow({ id: exhibition.gallery._id})" class="black">
+        <p class="has-text-centered" >{{ exhibition.gallery.name }}</p></a>
+        <hr>
+        <p><strong>RATING</strong> - {{exhibition.rating}}</p>
+        <p class="showDescription"><strong>About this exhibition:</strong> {{exhibition.description}}</p>
+      </div>
+    </div>
+
+    <div class="columns picture">
+      <div class="card-image column is-12-desktop">
+        <img src="{{ exhibition.image }}" alt="This is{{exhibition.name}}">
+      </div>
+    </div>
+  </div>
+
+  <div class="has-text-centered column is-12-desktop">
+    <button class="button" ng-if="isAuthenticated()" ng-click="handleDelete()">DELETE EXHIBITION</button>
+    <button class="button" ng-if="isAuthenticated()" ui-sref="exhibitionEdit({ id: exhibition._id })">Edit</button>
+  </div>
+
+  <hr>
+
+  <div class="comments column bottom is-multiline">
+
+    <div class="column is-8 is-offset-2 ">
+      <div class="card article">
+        <div class="card-content">
+
+          <div class="media">
+            <div class="media-content has-text-centered">
+              <p class="title article-title">What people said about this exhibition:</p>
+              <div class="tags has-addons level-item">
+                <button class="tag is-rounded span"><a class="black" ui-sref="galleryShow({ id: exhibition.gallery._id})">@{{exhibition.gallery.name}}</a></button>
+                <span class="tag is-rounded">Xhibit-reviews</span>
+              </div>
+              <hr>
+            </div>
+          </div>
+
+          <div ng-repeat="comment in exhibition.comments">
+            <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
+            <span>{{ comment.text }}</span>
+            <button ng-if="comment.commentAuthor._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+            <hr>
+          </div>
+
+
+
+          <form ng-if="isAuthenticated()" class="is-grouped" ng-submit="createComment()">
+            <input type="text" class="input" ng-model="comment.text">
+            <button class="button is-centered">Comment</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section class="hero is-fullheight is-default is-bold">
 <div class="hero-body">
   <div class="container has-text-centered">
