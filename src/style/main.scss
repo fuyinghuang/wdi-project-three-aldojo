@@ -5,6 +5,7 @@
 @import "pages/home";
 @import "pages/auth";
 @import "pages/profile";
+$button-colour: #00d4b185;
 .top{
   margin-top: 10vh;
 }
@@ -161,3 +162,31 @@
     }
   }
 }
+
+.button {
+    color: $button-colour;
+  }
+
+
+  .bottom{
+    padding-bottom: 100px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .created-section{
+    height: 37vh;
+    overflow: auto;
+  }

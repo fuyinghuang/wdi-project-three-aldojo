@@ -1,84 +1,128 @@
+<section class="hero is-small top">
+   <div class="hero-body">
 <div class="container top">
-  <div class="columns">
-    <div class="columns column is-6 is-multiline" style="flex-direction:column;">
+  <div class="columns is-mobile is-tablet">
+    <div class="columns is-mobile is-tablet column is-6 is-multiline" style="flex-direction:column;">
       <div style="display:flex;align-items: center;"class="columns column is-12 is-multiline">
-        <figure class="column is-4 image">
+        <figure class="column is-5 image">
           <img src="{{ country.flagUrl }}">
         </figure>
-        <div class="column is-8 columns is-multiline">
-          <h1 class="column title is-12 is-1" style="margin:auto;">{{ country.name }}</h1>
+        <div class="column is-7 columns is-multiline">
+          <h1 class="column is-12  title is-1" >{{ country.name }}</h1>
           <h2 class="column subtitle is-12">Region: {{ country.region }}</h2>
         </div>
       </div>
-      <h1 class="column title is-12 has-text-centered">
+      <hr />
+      <h1 class="column is-12 title is-3 has-text-centered">
         The Most Popular Food in {{ country.name }}
       </h1>
-      <div class="columns is-multiline is-12">
+      <div class="columns is-12 is-multiline">
         <h1 class="column has-text-weight-bold has-text-left is-8">Name</h1>
         <h1 class="column has-text-weight-bold has-text-centered is-4">Votes</h1>
         <div class="column is-12" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
-          <a class="columns" ui-sref="foodShow({ id: food._id })">
+          <a class="columns is-mobile is-tablet" ui-sref="foodShow({ id: food._id })">
             <p class="column is-8 has-text-left">{{ food.name }}</p>
             <p class="column is-4 has-text-centered">{{ food.voteNum }}</p>
           </a>
         </div>
       </div>
-      <div class="column is-centered is-12">
-        <button class="button has-text-weight-bold  is-medium is-primary is-outlined" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">
-          <p class="has-text-centered">
-            Add A New Dish
-          </p>
-        </button>
-      </div>
+      <div class="column is-12 is-centered">
+        <!-- <button class="button has-text-weight-bold  is-medium is-primary is-outlined" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })"> -->
 
-    </div>
-    <div class="columns column is-6 is-multiline is-centered">
-        <div style="display:contents;" class="container has-text-centered is-centered">
-            <div class="column is-8 is-centered">
-              <figure class="image is-6">
-                <img src="{{ country.nationalFood[0].image }}">
-                <p>{{ country.nationalFood[0].name }}</p>
-              </figure>
-          </div>
+        <div class="column is-12-desktop has-text-centered">
+           <button class="button" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">
+              Add New Dish
+           </button> </div>
+
       </div>
-      <div class="column is-5">
-        <h4 class="title is-3 has-text-centered">Discussion</h4>
-        <div class="card is-shady">
-          <div class="card-image">
-            <div class="box">
-              <article class="media">
-                <div ng-repeat="comment in country.comments">
-                  <div class="media-left">
-                    <!-- <h3><strong>{{ comment.commentAuthor.username }}</strong></h3> -->
+    </div>
+    <div class="columns is-mobile is-tablet column is-6 is-multiline is-centered">
+        <div style="display:contents;" class="container has-text-centered is-centered">
+            <div class="column is-12-desktop is-12-tablet is-12-mobile">
+              <div class="column">
+                <!-- <a ui-sref="foodShow({ id: food._id })"> -->
+
+                <div class="card is-shady">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="{{ country.nationalFood[0].image }}">
+                      <!-- <img ng-src="{{ food.image }}" alt="{{food.name}}" class="modal-button" data-target="modal-image2"> -->
+                    </figure>
                   </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>{{ comment.commentAuthor.username }}</strong> <small>{{ comment.text }}</small> <small>31m</small>
-                        <br>
-                      </p>
+                  <div class="card-content">
+                    <div class="content has-text-centered">
+                      <h4>{{ country.nationalFood[0].name }}</h4>
                     </div>
-                    <div class="media-right">
-                      <button ng-if="isAuthenticated()" ng-if="comment.commentAuthor._id === userId" ng-click="deleteComment(comment)">x</button>
-                    </div>
-                  </article>
-                </div>
+                  </div>
+                  </div>
+                <!-- </a> -->
               </div>
             </div>
-            <!-- <form  ng-if="isAuthenticated()" ng-submit="addComment()"> -->
-              <form ng-submit="addComment()">
-                <!-- <label for='comment'>Something to share.. </label> -->
-                <textarea class="textarea is-medium" name="comment" ng-model="comment.text"></textarea>
-                <button class="button has-text-weight-bold  is-medium is-dark is-outlined">
-                  <p class="has-text-centered">
-                    Add A Comment
-                  </p>
-                </button>
+          </div>
+
+            <!-- <div class="column is-8  is-centered">
+
+              <figure class="image is-6">
+                <img src="{{ country.nationalFood[0].image }}">
+              </figure>
+              <p>{{ country.nationalFood[0].name }}</p>
+
+      </div> -->
+
+      </div>
+    </div>
+</div>
+
+</section>
+</div>
+
+
+<!-- <section class="columns created-section">
+  <div ng-repeat="food in country.nationalFood" class="column is-4-desktop is-6-tablet is-12-mobile">
+
+  <figure class="image column is-8-desktop show-image is-2by1-mobile">
+    <img src="{{ food.image }}" alt="{{ country.nationalFood.name }}">
+  </figure>
+</div>
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="hero is-small top">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column bottom is-multiline">
+        <div class="column is-10  ">
+          <div class="card article">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content has-text-centered">
+                  <p class="title article-title">Review</p>
+                  <hr>
+                </div>
+              </div>
+              <div ng-repeat="comment in country.comments">
+                <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
+                <span>{{ comment.text }}</span>
+                <button ng-if="isAuthenticated()" ng-if="comment.commentAuthor._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+                <hr>
+              </div>
+              <form ng-if="isAuthenticated()" class="is-grouped" ng-submit="addComment()">
+                <input type="text" class="input" ng-model="comment.text">
+                <button class="button is-centered btn">Comment</button>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-</div>
+  </div>
+</section>
