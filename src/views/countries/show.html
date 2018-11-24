@@ -17,10 +17,10 @@
         The Most Popular Food in {{ country.name }}
       </h1>
       <div class="columns is-12 is-multiline">
-        <h1 class="column has-text-weight-bold has-text-left is-8">Name</h1>
-        <h1 class="column has-text-weight-bold has-text-centered is-4">Votes</h1>
+        <h1 class="column is-8 has-text-weight-bold has-text-left subtitle is-4">Name</h1>
+        <h1 class="column is-4 has-text-weight-bold has-text-centered subtitle is-4">Votes</h1>
         <div class="column is-12" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
-          <a class="columns is-mobile is-tablet" ui-sref="foodShow({ id: food._id })">
+          <a class="columns is-mobile is-tablet vote" ui-sref="foodShow({ id: food._id })">
             <p class="column is-8 has-text-left">{{ food.name }}</p>
             <p class="column is-4 has-text-centered">{{ food.voteNum }}</p>
           </a>
