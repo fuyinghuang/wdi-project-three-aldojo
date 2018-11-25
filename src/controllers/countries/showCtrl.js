@@ -4,6 +4,7 @@ function showCtrl($state, $scope, $http, $location) {
     url: `/api/countries/alpha3/${$state.params.alpha3Code}`
   }).then(result => {
     if (result.data) {
+      console.log(result.data, 'result datas');
       $scope.country = result.data;
     } else {
       $location.path(`/countries/new/${$state.params.alpha3Code}`).replace();

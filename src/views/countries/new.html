@@ -1,15 +1,17 @@
 <section class="hero is-small country">
   <div class="hero-body">
-    <div class="container has-text-centered">
+    <div class="columns is-mobile">
+    <div class="container">
       <h1 class="title is-3 has-text-centered">Would you like to create {{ country.name }} ?</h1>
     </div>
   </div>
+</div>
 </section>
 <div class="content">
 </div>
 <section class="container">
-  <div class="columns is-mobile is-tablet is-multiline">
-      <div class="column is-4-desktop is-offset-4 is-6-tablet is-12-mobile">
+  <div class="columns is-12-mobile is-tablet is-multiline">
+      <div class="column is-offset-3 is-6-tablet is-12-mobile has-text-centered">
         <form ng-submit="handleSubmit()">
           <div class="control">
             <input class="input" type="hidden" ng-model="country.name">

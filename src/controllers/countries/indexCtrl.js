@@ -8,7 +8,6 @@ function indexCtrl($state, $scope, $http) {
     $scope.countries = result.data;
   });
   $scope.findCountry = function() {
-    console.log('this it sihfiddsifhsifhdsif');
     $http({
       method: 'GET',
       url: `https://restcountries.eu/rest/v2/name/${$scope.searchTerm}`,

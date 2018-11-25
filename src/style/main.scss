@@ -5,6 +5,8 @@
 @import "pages/home";
 @import "pages/auth";
 @import "pages/profile";
+@import "pages/country";
+$button-colour: #00d4b185;
 .top{
   margin-top: 10vh;
 }
@@ -16,148 +18,53 @@
 }
 
 
-.white {
-  color: white;
-  font-size: 20px;
+.button {
+  color: $button-colour;
 }
 
-.resultsContainer {
-  display: flex;
-  justify-content: center;
-  justify-content: space-between;
-  width: 50%;
+.bottom{
+  padding-bottom: 100px;
+}
+
+
+.vote{
+  color: black;
+}
+
+
+.votefood{
+  height: 55vh;
+  overflow: auto;
+  width: 98vw;
+}
+.votecountryfood{
   height: 20vh;
-  margin: auto;
-  background: rgba(0,0,0,0.7);
-  align-items: center;
-  justify-content: center;
+  overflow: auto;
 }
 
 
-
-.home-image {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  // background-image: url("./style/earth.gif");
-  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/-Vg6Oxx/earth-zoom-out-to-space-satellites-and-moon-orbiting-around-the-earth-4k_vy8x2lrhx__F0006.png);
-  background-size: cover;
-  h1 {
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    padding-top: 20px;
-  }
+.created-section{
+  height: 37vh;
+  overflow: auto;
 }
 
 
-
-.searchContainer {
-  position: absolute;
-  margin: auto;
-  width: 300px;
-  height: 200px;
-  .search {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    background: #00d4b185;
-    border-radius: 50%;
-    transition: all 1s;
-    z-index: 4;
-    &:hover {
-      cursor: pointer;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      margin: auto;
-      top: 22px;
-      right: 0;
-      bottom: 0;
-      left: 22px;
-      width: 12px;
-      height: 2px;
-      background: white;
-      transform: rotate(45deg);
-      transition: all .5s;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      margin: auto;
-      top: -5px;
-      right: 0;
-      bottom: 0;
-      left: -5px;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      border: 2px solid white;
-      transition: all .5s;
-    }
+div#nationalFood  {
+  transition: 0.8s opacity;
+  padding: 7px;
+  border-radius: 10px;
+  &:hover {
+    opacity: 0.1;
   }
-  input {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    outline: none;
-    border: none;
-    background: #00d4b185;
-    color: white;
-    padding: 0 80px 0 20px;
-    border-radius: 30px;
-    box-shadow: 0 0 25px 0 #00d4b185,
-    0 20px 25px 0 rgba(0, 0, 0, 0.2);
-    transition: all 1s;
-    opacity: 0;
-    z-index: 5;
-    font-weight: normal;
-    font-size: 20px;
+}
 
-    &:hover {
-      cursor: pointer;
-    }
-    &:focus {
-      width: 300px;
-      opacity: 1;
-      cursor: text;
-    }
-    &:focus ~ .search {
-      right: -250px;
-      background: #151515;
-      z-index: 6;
-      &::before {
-        top: 0;
-        left: 0;
-        width: 25px;
-      }
-      &::after {
-        top: 0;
-        left: 0;
-        width: 25px;
-        height: 2px;
-        border: none;
-        background: white;
-        border-radius: 0%;
-        transform: rotate(-45deg);
-      }
-    }
-    &::placeholder {
-      color: white;
-      opacity: 0.5;
-      font-weight: bolder;
-    }
-  }
+.food-comment{
+  height: 32vh;
+  overflow: auto;
+}
+.btns{
+  margin-right: 60px;
+}
+.btnn{
+  margin-top: 5vh;
 }

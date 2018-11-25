@@ -6,18 +6,19 @@
 </div>
 
 
-
-<div class="resultsContainer" ng-repeat="place in searchResults | limitTo : 4">
-  <div>
-    <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
-      <p>{{ place.name }}</p>
-    </a>
+<div class="resultsContainer " ng-repeat="place in searchResults | limitTo : 4">
+  <div id="masonry" >
+    <div id="countymasonry">
+      <div>
+        <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+          <h3 class="title is-3 white has-text-centerd">{{ place.name }}</h3>
+        </a>
+      </div>
+      <div>
+        <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+          <img width="100px" ng-src="{{ place.flag }}" alt="{{country.name}}">
+        </a>
+      </div>
+    </div>
   </div>
-  <div>
-    <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
-      <img width="100px" src="{{ place.flag }}" alt="">
-    </a>
-  </div>
-</div>
-
 </div>
