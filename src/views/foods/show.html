@@ -8,7 +8,7 @@
           </figure>
         </div>
         <div class="column is-6 is-offset-1 coloumns">
-          <h1 class="title is-2 has text-centered">
+          <h1 class="title is-2 has-text-centered">
             {{ food.name }}
           </h1>
           <hr />
@@ -50,7 +50,8 @@
         </div>
         <div class="column is-four">
           <div class="hero-body">
-            <form ng-if="isAuthenticated()" ng-submit="addComment()">
+            <!-- <form ng-if="isAuthenticated()" ng-submit="addComment()"> -->
+            <form ng-submit="addComment()">
               <textarea class="textarea is-large" rows="5" name="comment" ng-model="comment.text"></textarea>
               <button class="button is-light">Add a comment</button>
             </form>

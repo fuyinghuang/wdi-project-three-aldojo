@@ -33,9 +33,13 @@ $button-colour: #00d4b185;
 
 
 .votefood{
-  height: 60vh;
+  height: 55vh;
   overflow: auto;
   width: 98vw;
+}
+.votecountryfood{
+  height: 20vh;
+  overflow: auto;
 }
 
 
@@ -55,7 +59,7 @@ div#nationalFood  {
 }
 
 .food-comment{
-  height: 25vh;
+  height: 32vh;
   overflow: auto;
 }
 .btns{

@@ -4,27 +4,47 @@
 
 [GitHub Repo](https://github.com/huangfuin1101/wdi-project-three-aldojo)
 
+Aldojo is a travelling app
 
 ## Home page
 ![](screenshots/home.png)
 
-## Log in mode
-![](screenshots/log-in-mode.png)
 
-## Index page
-![](screenshots/index.png)
+![](screenshots/home-2.png)
 
-## Show page
-![](screenshots/show-page.png)
 
-## Sign up page
-![](screenshots/signup.png)
+##Register
 
-## Create page
-![](screenshots/add.png)
+![](screenshots/register.png)
 
-## Edit and delete
-![](screenshots/edit-delete.png)
+
+##Login
+
+![](screenshots/login.png)
+
+
+## Search a country
+![](screenshots/countryindex.png)
+
+## Inside a country
+![](screenshots/country-show.png)
+
+
+![](screenshots/country-review.png)
+
+## Add a cuuntry
+![](screenshots/country-new.png)
+
+## Looking for food
+![](screenshots/foodindex.png)
+
+
+## Found the food
+![](screenshots/food-show.png)
+
+![](screenshots/food-review.png)
+
+
 
 ## Review page
 ![](screenshots/reviews.png)
@@ -32,6 +52,22 @@
 
 ## Profile page
 ![](screenshots/profile.png)
+
+![](screenshots/profile-2.png)
+
+
+## Responsive mode
+### Home page
+![](screenshots/home-res.png)
+
+### Food show page
+![](screenshots/foodshow-res.png)
+
+### Profile
+![](screenshots/profile-res.png)
+
+
+
 
 
 ## Technologies Used
@@ -105,6 +141,8 @@ The app must :
 
 ### Styling
 
+We created our log using Tiffiny green similar colour ho
+
 ### Wins and Blockers
 
 
@@ -114,3 +152,4 @@ The app must :
 * Show the country and the food that user has voted on the user profile page.
 * Apply external API (map) for the location of each country and the food.
 * Create another route for user to manage their own profile.
+* Improve responsive design.
