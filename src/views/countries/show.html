@@ -5,7 +5,7 @@
         <div class="columns is-mobile is-tablet column is-6 is-multiline" style="flex-direction:column;">
           <div style="display:flex;align-items: center;"class="columns column is-12 is-multiline">
             <figure class="column is-5 image">
-              <img src="{{ country.flagUrl }}">
+              <img ng-src="{{ country.flagUrl }}">
             </figure>
             <div class="column is-7 columns is-multiline">
               <h1 class="column is-12  title is-1" >{{ country.name }}</h1>
@@ -42,7 +42,7 @@
                   <div id="nationalFood" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
                     <a class="card-image is-mobile is-tablet vote" ui-sref="foodShow({ id: food._id })">
                       <figure class="image is-4by3 ">
-                        <img src="{{ food.image }}">
+                        <img ng-src="{{ food.image }}">
                       </figure>
                       <div class="card-content">
                         <div class="content has-text-centered">
@@ -67,7 +67,7 @@
   <div class="hero-body">
     <div class="container">
       <div class="column bottom is-multiline">
-        <div class="column is-10  ">
+        <div class="column is-12">
           <div class="card article">
             <div class="card-content">
               <div class="media">

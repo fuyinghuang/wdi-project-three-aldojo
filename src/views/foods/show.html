@@ -1,178 +1,61 @@
-
-
-
-
-
-
-
-
-
-
-<div class="columns show">
-
-  <div class="column is-4 left">
-    <div class="column is-desktop">
-      <h1 class="title is-2 has-text-centered"><span id="blue" >{{exhibition.name}}</span></h1>
-
-<!-- if bookmarked array includes your id, you can remove it -->
-      <div ng-if="exhibition.bookmarked.includes(userId)" id="bookmark-icon">
-        <button class="button" ng-click="removeBookmark()"><i class="fas fa-bookmark"></i></button>
-      </div>
-<!-- if your id isnt in the bookmarked array of this exhibition, you can bookmark it -->
-      <div ng-if="!exhibition.bookmarked.includes(userId)" id="bookmark-icon">
-        <button class="button" ng-click="bookmarkExhibition()"><i class="far fa-bookmark"></i></button>
-      </div>
-
-      <p class="has-text-centered" >Until {{exhibition.dates}}</p>
-      <a ui-sref="galleryShow({ id: exhibition.gallery._id})" class="black">
-        <p class="has-text-centered" >{{ exhibition.gallery.name }}</p></a>
-        <hr>
-        <p><strong>RATING</strong> - {{exhibition.rating}}</p>
-        <p class="showDescription"><strong>About this exhibition:</strong> {{exhibition.description}}</p>
-      </div>
-    </div>
-
-    <div class="columns picture">
-      <div class="card-image column is-12-desktop">
-        <img src="{{ exhibition.image }}" alt="This is{{exhibition.name}}">
-      </div>
-    </div>
-  </div>
-
-  <div class="has-text-centered column is-12-desktop">
-    <button class="button" ng-if="isAuthenticated()" ng-click="handleDelete()">DELETE EXHIBITION</button>
-    <button class="button" ng-if="isAuthenticated()" ui-sref="exhibitionEdit({ id: exhibition._id })">Edit</button>
-  </div>
-
-  <hr>
-
-  <div class="comments column bottom is-multiline">
-
-    <div class="column is-8 is-offset-2 ">
-      <div class="card article">
-        <div class="card-content">
-
-          <div class="media">
-            <div class="media-content has-text-centered">
-              <p class="title article-title">What people said about this exhibition:</p>
-              <div class="tags has-addons level-item">
-                <button class="tag is-rounded span"><a class="black" ui-sref="galleryShow({ id: exhibition.gallery._id})">@{{exhibition.gallery.name}}</a></button>
-                <span class="tag is-rounded">Xhibit-reviews</span>
-              </div>
-              <hr>
-            </div>
-          </div>
-
-          <div ng-repeat="comment in exhibition.comments">
-            <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
-            <span>{{ comment.text }}</span>
-            <button ng-if="comment.commentAuthor._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
-            <hr>
-          </div>
-
-
-
-          <form ng-if="isAuthenticated()" class="is-grouped" ng-submit="createComment()">
-            <input type="text" class="input" ng-model="comment.text">
-            <button class="button is-centered">Comment</button>
-          </form>
-
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section class="hero is-fullheight is-default is-bold">
-<div class="hero-body">
-  <div class="container has-text-centered">
-    <div class="columns is-vcentered">
-      <div class="column is-5">
-        <figure class="image is-4by3">
-          <img src="{{ food.image }}" alt="Description">
-        </figure>
-      </div>
-      <div class="column is-6 is-offset-1">
-        <h1 class="title is-2">
-          {{ food.name }}
-        </h1>
-        <h2 class="subtitle is-4">
-
-        </h2>
-        <br>
-        <p class="has-text-centered">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-5">
+          <figure class="image is-4by3">
+            <img src="{{ food.image }}" alt="Description">
+          </figure>
+        </div>
+        <div class="column is-6 is-offset-1 coloumns">
+          <h1 class="title is-2 has text-centered">
+            {{ food.name }}
+          </h1>
+          <hr />
+          <br>
+          <p class="has text-left"><strong>Votes</strong> - {{ food.voteNum }}</p>
+          <p><strong>About this dish:</strong>
             {{food.description}}
-        </p>
-      </div>
+          </p>
+          <div class="container">
+          </div>
+          <div class="column is-12-desktop btnn">
+            <button class="button btns" ng-if="isAuthenticated()" ng-click="handleDelete()">DELETE</button>
+            <button class="button btns" ng-if="isAuthenticated()" ui-sref="foodEdit({ id: food._id })">Edit</button>
+            <button class="button btns" type="button" ng-click="vote(food)"><i class="fas fa-arrow-up"></i></button>
+            <button class="button btns" type="button" ng-click="unvote(food)"><i class="fas fa-arrow-down"></i></button>
+          </div>
+        </div>
     </div>
   </div>
 </div>
 </section>
 
 
-
-<button ui-sref="foodEdit({ id: food._id })">Edit</button>
-<button ng-click="handleDelete()">DELETE</button>
-
-<button class="button" type="button" ng-click="vote(food)"><i class="fas fa-arrow-up"></i></button>
-<button class="button" type="button" ng-click="unvote(food)"><i class="fas fa-arrow-down"></i></button>
-<p>{{ food.voteNum }}</p>
-
-<section class="section is-medium">
-  <h3 class="title is-3 has-text-centered">Reviews</h3>
-  <div class="columns">
-    <div class="column is-four">
-      <div class="hero-body">
-        <!-- <div ng-if="isAuthenticated()"ng-repeat="comment in food.comments"> -->
-        <div ng-repeat="comment in food.comments">
-          <h3>{{ comment.commentAuthor.username }}</h3>
-          <p>{{ comment.text }}</p>
-          <!-- <button ng-if="isAuthenticated()" ng-if="comment.user._id === userId" class="button is-dark" ng-click="deleteComment(comment)">x</button> -->
-          <button ng-click="deleteComment(comment)">x</button>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered">Reviews</h3>
+      <hr />
+      <div class="columns">
+        <div class="column is-four">
+          <div class="hero-body food-comment">
+            <div  ng-if="isAuthenticated()" ng-repeat="comment in food.comments">
+              <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
+              <span>{{ comment.text }}</span>
+              <button ng-if="isAuthenticated()" ng-if="comment.commentAuthor._id === userId"  ng-click="deleteComment(comment)">x</button>
+              <hr />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="column is-four">
-      <div class="hero-body">
-        <!-- <form  ng-if="isAuthenticated()" ng-submit="addComment()"> -->
-        <form ng-submit="addComment()">
-          <label for='comment'>Something to share.. </label>
-          <textarea class="textarea is-medium" name="comment" ng-model="comment.text"></textarea>
-          <button class="button is-light">Add a comment</button>
-        </form>
+        <div class="column is-four">
+          <div class="hero-body">
+            <form ng-if="isAuthenticated()" ng-submit="addComment()">
+              <textarea class="textarea is-large" rows="5" name="comment" ng-model="comment.text"></textarea>
+              <button class="button is-light">Add a comment</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
