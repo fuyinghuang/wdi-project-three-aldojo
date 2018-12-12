@@ -74,8 +74,6 @@ Aldojo was my third project of General Assembly's Web Development Immersive. It 
 * Node.js
 * MongoDB
 * express: v4.16.4
-* express-ejs-layout: v2.5.0
-* ejs: v2.6.1
 * express-session: v1.15.6
 * body-parser: v1.18.3
 * mongoose: v5.3.7
