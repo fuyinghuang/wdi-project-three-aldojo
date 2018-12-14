@@ -9,60 +9,60 @@ Aldojo is a travelling info app created by Alex(Al), Doris(Do) and Josh(Jo) aimi
 Aldojo was my third project of General Assembly's Web Development Immersive. It was a group project built on 7 days with two colleagues and it also was my first go of  MEAN stack app technologies.
 
 
-## Home page
-![](screenshots/home.png)
+## Home Page
+![Home Page](screenshots/home.png)
 
 
-![](screenshots/home-2.png)
+![Home Page 2](screenshots/home-2.png)
 
 
 ## Register
 
-![](screenshots/register.png)
+![Register](screenshots/register.png)
 
 
 ## Login
 
-![](screenshots/login.png)
+![Login](screenshots/login.png)
 
 
-## Search a country
-![](screenshots/countryindex.png)
+## Search a Country (Country Index)
+![Country Index](screenshots/countryindex.png)
 
-## Inside a country
-![](screenshots/country-show.png)
+## Inside a Country (Country Show)
+![Country Show](screenshots/country-show.png)
 
+![Country Show 2](screenshots/country-review.png)
 
-![](screenshots/country-review.png)
+## Add a Country
+![Add a Country](screenshots/country-new.png)
 
-## Add a cuuntry
-![](screenshots/country-new.png)
-
-## Looking for food
-![](screenshots/foodindex.png)
-
-
-## Found the food
-![](screenshots/food-show.png)
-
-![](screenshots/food-review.png)
+## Looking for Food (Food Index)
+![Food Index](screenshots/foodindex.png)
 
 
-## Profile page
-![](screenshots/profile.png)
+## Food Show Page
+![Food Show](screenshots/food-show.png)
 
-![](screenshots/profile-2.png)
+![Food Show 2](screenshots/food-review.png)
 
 
-## Responsive mode
-### Home page
-![](screenshots/home-res.png)
+## Profile Page
+![Profile Page](screenshots/profile.png)
 
-### Food show page
-![](screenshots/foodshow-res.png)
+![Profile Page 2](screenshots/profile-2.png)
 
-### Profile
-![](screenshots/profile-res.png)
+
+## Responsive Mode
+
+### Home Page
+![Home Page](screenshots/home-res.png)
+
+### Food Show Page
+![Food Show Page](screenshots/foodshow-res.png)
+
+### Profile Page
+![Profile Page](screenshots/profile-res.png)
 
 
 ## Technologies Used
