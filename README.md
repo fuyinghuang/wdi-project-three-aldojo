@@ -238,6 +238,8 @@ As for myself, write code test is a big challenge as I have only practiced littl
 
 ### Future Features
 
+There are some features planned to add on Aldojo, including:
+
 * Show the country and food that user has created on user profile page.
 * Show the food that user has voted on the user profile page.
 * Write entire code test for backend routes.
