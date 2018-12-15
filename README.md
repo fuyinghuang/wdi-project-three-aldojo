@@ -99,7 +99,6 @@ Aldojo was my third project of General Assembly's Web Development Immersive. It 
 ### APIs Used
 * REST Countries
 
-
 ## Approach Taken
 
 We tried to build the backend routes and tested in Insomnia to make sure it was solid. We worked on building basic RESTful routes for country, food and the user at the beginning. Then we moved to frontend, make sure it worked probably and we used external API to get the date of all the countries.
@@ -127,7 +126,7 @@ The app must :
 
 
 ### Featured Piece of Code no.1
-This is how we use external API to get all the country data, and use the country alpha3Code as the url of each individal country. When sending a request for a country, if the country it's in our database, will go stright to the country Show page, if not, will diresct to country New page to create a new page.
+This is how we used external API to get all the country data, and used the country alpha3Code as the url of each individal country. When sending a request for a country, if the country it's in our database, will go straight to the country Show page, if not, will direct to country New page to create a new page.
 From src/controllers/countries/indexCtrl.js and src/controllers/countries/showCtrl.js
 ```
 function indexCtrl($state, $scope, $http) {
@@ -201,7 +200,7 @@ function unvote(req, res, next) {
 }
 ```
 ### Featured Piece of Code no.3
-When user has reviewd a country/food for more than once, it will only appear once on the profile page by filtering the country/food index in the array.
+When user has reviewed a country/food for more than once, it will only appear once on the profile page by filtering the country/food index in the array.
 From src/controllers/profileCtrl.js
 
 ```
@@ -230,11 +229,11 @@ We created our logo using Tiffiny green similar colour as the colour scheme for 
 
 ### Wins and Blockers
 
-The big win for us as a team I would say is the teamwork. Every one has contributed each part of the app, from backend, front and the styling.
+The big win for us as a team I would say was the teamwork. Every one has contributed each part of the app, from backend, front and the styling.
 
-Our biggest challenge would be at the beginning that we couldn't get the countryShow route done for the confusion of the reference between country and food. The vote and uovote for the food is another challenge as we realised that token is an object instead of a string.
+Our biggest challenge would be at the beginning that we couldn't get the countryShow route done for the confusion of the reference between country and food. The vote and uovote for the food was another challenge as we realised that token is an object instead of a string.
 When we had basic RESTful routes done, it took us about 2 days to apply the external API.
-As for myself, write code test is a big challenge as I have only practiced little and have not too many ideas on writing the test and what to teat for.  
+As for myself, write code test was a big challenge as I have only practiced little and have not too many ideas on writing the test and what to teat for.  
 
 ### Future Features
 
