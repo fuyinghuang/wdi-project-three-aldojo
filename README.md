@@ -117,17 +117,15 @@ The app must :
 * Include at least one referenced or embedded sub-document
 * Include automated tests
 
-
 #### Client-side
 
 * Use Angular to build a front-end that consumes your API
 * Use SCSS instead of CSS
 * Use Webpack & Yarn to manage dependencies and compile source code
 
-
 ### Featured Piece of Code no.1
 This is how we used external API to get all the country data, and used the country alpha3Code as the url of each individal country. When sending a request for a country, if the country it's in our database, will go straight to the country Show page, if not, will direct to country New page to create a new page.
-From src/controllers/countries/indexCtrl.js and src/controllers/countries/showCtrl.js
+From [.src/controllers/countries/indexCtrl.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/src/controllers/countries/indexCtrl.js) and [.src/controllers/countries/showCtrl.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/src/controllers/countries/showCtrl.js)
 ```
 function indexCtrl($state, $scope, $http) {
   $http({
@@ -165,7 +163,7 @@ function showCtrl($state, $scope, $http, $location) {
 ```
 ### Featured Piece of Code no.2
 This is for vote/unvote a particular food. Each user can only vote once for the same food. It checked if the user has been voted for the particular food, then the vote of the food wouldn't increase. If the user has voted the food, the user can remove the vote.
-From controllers/voteController.js
+From [.controllers/voteController.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/controllers/voteController.js)
 
 ```
 function vote(req, res, next) {
@@ -201,7 +199,7 @@ function unvote(req, res, next) {
 ```
 ### Featured Piece of Code no.3
 When user has reviewed a country/food for more than once, it will only appear once on the profile page by filtering the country/food index in the array.
-From src/controllers/profileCtrl.js
+From [.src/controllers/profileCtrl.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/src/controllers/profileCtrl.js)
 
 ```
 function profileCtrl($scope, $http, $state) {
