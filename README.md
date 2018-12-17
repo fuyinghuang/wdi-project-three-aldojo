@@ -124,7 +124,7 @@ The app must :
 * Use Webpack & Yarn to manage dependencies and compile source code
 
 ### Featured Piece of Code no.1
-This is how we used external API to get all the country data, and used the country alpha3Code as the url of each individal country. When sending a request for a country, if the country it's in our database, will go straight to the country Show page, if not, will direct to country New page to create a new page.
+This is how we used external API to get all the country data, and used the country alpha3Code as the url of each individual country. When sending a request for a country, if the country it's in our database, will go straight to the country Show page, if not, will direct to country New page to create a new page.
 From [.src/controllers/countries/indexCtrl.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/src/controllers/countries/indexCtrl.js) and [.src/controllers/countries/showCtrl.js](https://github.com/huangfuin1101/wdi-project-three-aldojo/blob/master/src/controllers/countries/showCtrl.js)
 ```
 function indexCtrl($state, $scope, $http) {
@@ -223,15 +223,15 @@ function profileCtrl($scope, $http, $state) {
 
 ### Styling
 
-We created our logo using Tiffiny green similar colour as the colour scheme for the app, presenting a user friendly and welcoming atmosphere followed by minimalist design as the priority is to show the information clearly.  
+We created our logo using Tiffany green similar colour as the colour scheme for the app, presenting a user friendly and welcoming atmosphere followed by minimalist design as the priority is to show the information clearly.  
 
 ### Wins and Blockers
 
-The big win for us as a team I would say was the teamwork. Every one has contributed each part of the app, from backend, front and the styling.
+The big win for us as a team I would say was the teamwork. Everyone has contributed each part of the app, from back end, front end and the styling.
 
-Our biggest challenge would be at the beginning that we couldn't get the countryShow route done for the confusion of the reference between country and food. The vote and uovote for the food was another challenge as we realised that token is an object instead of a string.
+Our biggest challenge would be at the beginning that we couldn't get the countryShow route done for the confusion of the reference between country and food. The vote and uovote for the food was another challenge as we realised that the token is an object instead of a string.
 When we had basic RESTful routes done, it took us about 2 days to apply the external API.
-As for myself, write code test was a big challenge as I have only practiced little and have not too many ideas on writing the test and what to teat for.  
+As for myself, write code test was a big challenge as I have only practiced little and have not too many ideas on writing the test and what to test for.  
 
 ### Future Features
 
