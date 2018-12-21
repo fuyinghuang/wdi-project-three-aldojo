@@ -4,7 +4,7 @@
 
 [GitHub Repo](https://github.com/huangfuin1101/wdi-project-three-aldojo)
 
-Aldojo is a travelling info app created by Alex(Al), Doris(Do) and Josh(Jo) aiming for traveler to use as a tour guide. Users have the access to a variety of different features of the app when register and log in, such as adding more countries, creating, editing and deleting food on a particular country. The user can also review the country, food and even vote for the food. On the profile page, the user can see the record of the food and the country they have reviewed.
+Aldojo is a travelling info app created by Alex(Al), Doris(Do) and Josh(Jo) aiming for the traveler to use as a tour guide. Users have access to a variety of different features of the app when register and log in, such as adding more countries, creating, editing and deleting food on a particular country. The user can also review the country, food and even vote for the food. On the profile page, the user can see the record of the food and the country they have reviewed.
 
 Aldojo was my third project of General Assembly's Web Development Immersive. It was a group project built on 7 days with two colleagues and it also was my first go of  MEAN stack app technologies.
 
