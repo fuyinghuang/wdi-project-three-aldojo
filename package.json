@@ -11,6 +11,7 @@
     "start": "yarn build && node index",
     "test": "nyc mocha test/**/*_spec.js --require test/spec_helper --recursive --exit"
   },
+  "heroku-run-build-script": true,
   "dependencies": {
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.1",
