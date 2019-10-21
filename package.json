@@ -13,6 +13,7 @@
   },
   "heroku-run-build-script": true,
   "dependencies": {
+    "@babel/core": "^7.0.0",
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.1",
     "angular-flash-alert": "^2.5.0",
@@ -28,7 +29,7 @@
     "satellizer": "^0.15.5"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
