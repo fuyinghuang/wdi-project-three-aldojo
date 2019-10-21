@@ -1,0 +1,46 @@
+<section class="hero is-small country">
+  <div class="hero-body">
+    <div class="columns is-mobile">
+    <div class="container">
+      <h1 class="title is-3 has-text-centered">Would you like to create {{ country.name }} ?</h1>
+    </div>
+  </div>
+</div>
+</section>
+<div class="content">
+</div>
+<section class="container">
+  <div class="columns is-12-mobile is-tablet is-multiline">
+      <div class="column is-offset-3 is-6-tablet is-12-mobile has-text-centered">
+        <form ng-submit="handleSubmit()">
+          <div class="control">
+            <input class="input" type="hidden" ng-model="country.name">
+          </div>
+          <div class="control">
+            <input class="input" type="hidden" ng-model="country.region">
+          </div>
+          <div class="control">
+          <input class="input" type="hidden" ng-model="country.alpha3Code">
+          </div>
+          <div class="card is-shady">
+            <div class="card-image">
+              <figure class="image is-3by2">
+                <input class="input" type="hidden" ng-model="country.flagUrl">
+                <img ng-src="{{ country.flag }}" alt="{{ country.name }}" class="modal-button" data-target="modal-image2">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h4>{{ country.name }} ({{ country.subregion }})</h4>
+              </div>
+            </div>
+          </div>
+            <div class="content">
+            </div>
+          <div class="content has-text-centered">
+          <button class="button is-dark">YES</button>
+        </div>
+        </form>
+    </div>
+  </div>
+</section>

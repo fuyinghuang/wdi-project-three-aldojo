@@ -1,0 +1,24 @@
+<div class="home-image">
+
+<div class="searchContainer">
+  <input id="search" type="text" placeholder="Browse a Country" ng-model="searchTerm" ng-change="findCountry()">
+  <div class="search"></div>
+</div>
+
+
+<div class="resultsContainer " ng-repeat="place in searchResults | limitTo : 4">
+  <div id="masonry" >
+    <div id="countymasonry">
+      <div>
+        <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+          <h3 class="title is-3 white has-text-centerd">{{ place.name }}</h3>
+        </a>
+      </div>
+      <div>
+        <a class="white" ui-sref="countryShow({ alpha3Code: place.alpha3Code })">
+          <img width="100px" ng-src="{{ place.flag }}" alt="{{country.name}}">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

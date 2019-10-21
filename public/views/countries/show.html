@@ -1,0 +1,95 @@
+<section class="hero is-small top">
+  <div class="hero-body">
+    <div class="container top">
+      <div class="columns is-mobile is-tablet">
+        <div class="columns is-mobile is-tablet column is-6 is-multiline" style="flex-direction:column;">
+          <div style="display:flex;align-items: center;"class="columns column is-12 is-multiline">
+            <figure class="column is-5 image">
+              <img ng-src="{{ country.flagUrl }}">
+            </figure>
+            <div class="column is-7 columns is-multiline">
+              <h1 class="column is-12  title is-1" >{{ country.name }}</h1>
+              <h2 class="column subtitle is-12">Region: {{ country.region }}</h2>
+            </div>
+          </div>
+          <hr />
+          <h1 class="column is-12 title is-3 has-text-centered">
+            The Most Popular Food in {{ country.name }}
+          </h1>
+          <div class="columns is-12 is-multiline votecountryfood is-mobile ">
+            <h1 class="column is-8 has-text-weight-bold has-text-left subtitle is-4">Name</h1>
+            <h1 class="column is-4 has-text-weight-bold has-text-centered subtitle is-4">Votes</h1>
+            <div class="column is-12" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
+              <a class="columns is-mobile is-tablet vote" ui-sref="foodShow({ id: food._id })">
+                <p class="column is-8 has-text-left">{{ food.name }}</p>
+                <p class="column is-4 has-text-centered">{{ food.voteNum }}</p>
+              </a>
+            </div>
+          </div>
+          <div class="column is-12 is-centered">
+            <div class="column is-12-desktop has-text-centered">
+              <button class="button" ng-if="isAuthenticated()" ui-sref="foodNew({ id: country._id })">
+                Add New Dish
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-mobile is-tablet column is-6 is-multiline is-centered">
+          <div style="display:contents;" class="container has-text-centered is-centered">
+            <div class="column is-12-desktop is-12-tablet is-12-mobile">
+              <div class="column is-mobile">
+                <div class="card is-shady votefood" >
+                  <div id="nationalFood" ng-repeat="food in country.nationalFood | orderBy: '-voteNum'">
+                    <a class="card-image is-mobile is-tablet vote" ui-sref="foodShow({ id: food._id })">
+                      <figure class="image is-4by3 ">
+                        <img ng-src="{{ food.image }}">
+                      </figure>
+                      <div class="card-content">
+                        <div class="content has-text-centered">
+                          <h4>{{ food.name }}</h4>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</div>
+
+
+
+<section class="hero is-small top">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column bottom is-multiline">
+        <div class="column is-12">
+          <div class="card article">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content has-text-centered">
+                  <p class="title article-title">Review</p>
+                  <hr>
+                </div>
+              </div>
+                <div ng-repeat="comment in country.comments">
+                <span style="font-weight: bold;">{{ comment.commentAuthor.username }}</span>
+                <span>{{ comment.text }}</span>
+                <button ng-if="isAuthenticated()" ng-if="comment.commentAuthor._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+                <hr>
+              </div>
+              <form class="is-grouped"  ng-submit="addComment()">
+                <input type="text" class="input" name="comment" ng-model="comment.text">
+                <button class="button is-centered btn">Comment</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

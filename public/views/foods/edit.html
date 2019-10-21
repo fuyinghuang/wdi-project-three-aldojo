@@ -1,0 +1,38 @@
+<section class="section is-small">
+  <div class="columns">
+    <div class="column is-4 is-offset-4">
+      <h1 class="title is-3 has-text-centered has-text-grey">Edit</h1>
+      <form ng-submit="handleSubmit()">
+        <div class="field">
+          <label class="label">Food</label>
+          <div class="control">
+            <input class="input" ng-model="food.name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label ">Description</label>
+          <div class="control">
+            <input class="input" ng-model="food.description">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Image Url</label>
+          <div class="control">
+            <input class="input" ng-model="food.image">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <input class="input" type="hidden" ng-model="food.country">
+          </div>
+        </div>
+        <div class="content has-text-centered">
+        <button class="button is-danger">Update</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</section>
