@@ -15,7 +15,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@uirouter/angularjs": "^1.0.20",
-    "angular": "^1.7.1",
+    "angular": "^1.7.9",
     "angular-flash-alert": "^2.5.0",
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.3",
